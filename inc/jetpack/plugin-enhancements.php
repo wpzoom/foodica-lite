@@ -20,6 +20,21 @@ class Foodica_Theme_Plugin_Enhancements {
 	var $display_notice = false;
 
 	/**
+	 * @var array; holds the theme dependencies.
+	 */
+	var $dependencies = array();
+
+	/**
+	 * @var array; holds the required Jetpack modules.
+	 */
+	var $modules = array();
+
+	/**
+	 * @var array; holds modules that are not activated.
+	 */
+	var $unactivated_modules = array();
+
+	/**
 	 * Init function.
 	 */
 	static function init() {
