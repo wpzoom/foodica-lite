@@ -6,7 +6,7 @@
 /**
  * Define Constants
  */
-define( 'FOODICA_THEME_VERSION', '1.3.1' );
+define( 'FOODICA_THEME_VERSION', '1.3.2' );
 define( 'FOODICA_THEME_DIR', trailingslashit( get_template_directory() ) );
 define( 'FOODICA_THEME_URI', trailingslashit( esc_url( get_template_directory_uri() ) ) );
 define( 'FOODICA_THEME_ASSETS_URI', FOODICA_THEME_URI . 'dist' );
