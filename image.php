@@ -46,7 +46,7 @@ get_header();
 							endif;
 						?>
 
-						<a href="<?php echo $next_attachment_url; ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
+						<a href="<?php echo esc_url( $next_attachment_url ); ?>" title="<?php the_title_attribute(); ?>" rel="attachment"><?php
 							$attachment_size = apply_filters( 'foodica_attachment_size', array( 1200, 1200 ) ); // Filterable image size.
 							echo wp_get_attachment_image( $post->ID, $attachment_size );
 						?></a>
@@ -77,11 +77,11 @@ get_header();
 					printf( __( 'Published <span class="entry-date"><time class="entry-date" datetime="%1$s" pubdate>%2$s</time></span> at <a href="%3$s" title="Link to full-size image">%4$s &times; %5$s</a> in <a href="%6$s" title="Return to %7$s" rel="gallery">%7$s</a>.', 'foodica' ),
 						esc_attr( get_the_date( 'c' ) ),
 						esc_html( get_the_date() ),
-						wp_get_attachment_url(),
+						esc_url( wp_get_attachment_url() ),
 						esc_html($metadata['width']),
 						esc_html($metadata['height']),
 						esc_url(get_permalink( $post->post_parent )),
-						get_the_title( $post->post_parent )
+						esc_html( get_the_title( $post->post_parent ) )
 					); ?>
 
 				<?php

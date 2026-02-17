@@ -38,9 +38,9 @@ $content_classes .= 'full-width' === $front_page_layout ? " full-layout" : '';
             if ( $wp_query->have_posts() ) : ?>
 
             <script type="text/javascript">
-                var wpz_currPage = <?php echo $paged; ?>,
-                    wpz_maxPages = <?php echo $wp_query->max_num_pages; ?>,
-                    wpz_pagingURL = '<?php the_permalink(); ?>page/';
+                var wpz_currPage = <?php echo absint( $paged ); ?>,
+                    wpz_maxPages = <?php echo absint( $wp_query->max_num_pages ); ?>,
+                    wpz_pagingURL = '<?php echo esc_js( get_permalink() ); ?>page/';
             </script>
 
             <section id="recent-posts" class="foodica-index">

@@ -25,7 +25,6 @@ class Foodica_Featured_Posts_Gallery extends WP_Widget {
 		}
 
 		ob_start();
-		extract( $args, EXTR_SKIP );
 
 		$title      = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
 		$category   = absint( $instance['category'] );
@@ -55,10 +54,10 @@ class Foodica_Featured_Posts_Gallery extends WP_Widget {
 
 		if ( $r->have_posts() ) {
 
-			echo $before_widget;
+			echo $args['before_widget'];
 
 			if ( $title )
-				echo $before_title . $title . $after_title; ?>
+				echo $args['before_title'] . $title . $args['after_title']; ?>
 
 			<ul class="feature-posts-list">
 
@@ -78,7 +77,7 @@ class Foodica_Featured_Posts_Gallery extends WP_Widget {
 
 					the_title( '<h3><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' );
 
-                    echo '<small>' . get_the_date() . '</small> <br />';
+                    echo '<small>' . esc_html( get_the_date() ) . '</small> <br />';
 
 
 					?>
@@ -92,7 +91,7 @@ class Foodica_Featured_Posts_Gallery extends WP_Widget {
 			// Reset the global $the_post as this query will have stomped on it
 			wp_reset_postdata();
 
-			echo $after_widget;
+			echo $args['after_widget'];
 
 			$cache[ $this->id ] = ob_get_flush();
 			wp_cache_set( $this->id_base, $cache, 'widget');
