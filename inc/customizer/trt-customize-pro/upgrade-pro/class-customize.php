@@ -93,9 +93,9 @@ final class Foodica_PRO_Customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'upgrade-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . '/inc/customizer/trt-customize-pro/upgrade-pro/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'upgrade-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . '/inc/customizer/trt-customize-pro/upgrade-pro/customize-controls.js', array( 'customize-controls' ), FOODICA_THEME_VERSION, true );
 
-		wp_enqueue_style( 'upgrade-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . '/inc/customizer/trt-customize-pro/upgrade-pro/customize-controls.css' );
+		wp_enqueue_style( 'upgrade-pro-customize-controls', trailingslashit( get_template_directory_uri() ) . '/inc/customizer/trt-customize-pro/upgrade-pro/customize-controls.css', array(), FOODICA_THEME_VERSION );
 	}
 }
 

@@ -384,7 +384,7 @@ function foodica_jetpack_enqueue_scripts() {
 	if ( is_admin() && get_user_meta( get_current_user_id(), 'foodica_jetpack_admin_notice', true ) !== 'dismissed' ) {
 
 		// Adds our JS file to the queue that WordPress will load
-		wp_enqueue_script( 'foodica_jetpack_admin_script', get_template_directory_uri() . '/inc/jetpack/js/plugin-enhancements.js', array( 'jquery' ), '20181117', true );
+		wp_enqueue_script( 'foodica_jetpack_admin_script', get_template_directory_uri() . '/inc/jetpack/js/plugin-enhancements.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
 		// Make some data available to our JS file
 		wp_localize_script( 'foodica_jetpack_admin_script', 'foodica_jetpack_admin', array(
