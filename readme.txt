@@ -2,7 +2,7 @@
 Contributors: WPZOOM
 Requires at least: 6.0
 Tested up to: 6.9
-Version: 1.3.2
+Version: 1.3.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, rtl-language-support
@@ -27,6 +27,9 @@ After installing and activating the Jetpack plugin follow these steps:
 2. Check additional settings in Customizer > Featured Content
 
 == Changelog ==
+
+= 1.3.3 =
+* Minor bug fixes
 
 = 1.3.2 =
 * Minor bug fixes and improvements
