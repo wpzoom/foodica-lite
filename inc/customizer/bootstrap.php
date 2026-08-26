@@ -71,9 +71,9 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
             'section'        => 'foodica_lite_homepage_layout',
             'type'           => 'select',
             'choices'        => array(
-                'left-sidebar'  => 'Left Sidebar',
-                'full-width'    => 'Full Width',
-                'right-sidebar' => 'Right Sidebar',
+                'left-sidebar'  => __( 'Left Sidebar', 'foodica' ),
+                'full-width'    => __( 'Full Width', 'foodica' ),
+                'right-sidebar' => __( 'Right Sidebar', 'foodica' ),
             )
         )
     );
@@ -86,9 +86,9 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
             'section'        => 'foodica_lite_homepage_layout',
             'type'           => 'select',
             'choices'        => array(
-                'left-sidebar'  => 'Left Sidebar',
-                'full-width'    => 'Full Width',
-                'right-sidebar' => 'Right Sidebar',
+                'left-sidebar'  => __( 'Left Sidebar', 'foodica' ),
+                'full-width'    => __( 'Full Width', 'foodica' ),
+                'right-sidebar' => __( 'Right Sidebar', 'foodica' ),
             )
         )
     );
@@ -101,9 +101,9 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
             'section'        => 'foodica_lite_homepage_layout',
             'type'           => 'select',
             'choices'        => array(
-                'left-sidebar'  => 'Left Sidebar',
-                'full-width'    => 'Full Width',
-                'right-sidebar' => 'Right Sidebar',
+                'left-sidebar'  => __( 'Left Sidebar', 'foodica' ),
+                'full-width'    => __( 'Full Width', 'foodica' ),
+                'right-sidebar' => __( 'Right Sidebar', 'foodica' ),
             )
         )
     );
@@ -116,9 +116,9 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
             'section'        => 'foodica_lite_homepage_layout',
             'type'           => 'select',
             'choices'        => array(
-                'left-sidebar'  => 'Left Sidebar',
-                'full-width'    => 'Full Width',
-                'right-sidebar' => 'Right Sidebar',
+                'left-sidebar'  => __( 'Left Sidebar', 'foodica' ),
+                'full-width'    => __( 'Full Width', 'foodica' ),
+                'right-sidebar' => __( 'Right Sidebar', 'foodica' ),
             )
         )
     );
@@ -131,10 +131,10 @@ function foodica_customizer_add_sections_and_options( $wp_customize ) {
             'section'        => 'foodica_lite_footer_layout',
             'type'           => 'select',
             'choices'        => array(
-                '1'  => '1 Column',
-                '2'  => '2 Columns',
-                '3'  => '3 Columns',
-                '4'  => '4 Columns',
+                '1'  => __( '1 Column', 'foodica' ),
+                '2'  => __( '2 Columns', 'foodica' ),
+                '3'  => __( '3 Columns', 'foodica' ),
+                '4'  => __( '4 Columns', 'foodica' ),
             )
         )
     );

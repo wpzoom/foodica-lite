@@ -55,14 +55,14 @@ function foodica_display_theme_page() {
 
                 <div class="wpz-onboard_header">
                     <div class="wpz-onboard_title-wrapper">
-                        <h1 class="wpz-onboard_title"><svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_3157_2609" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#D9D9D9"/></mask><g mask="url(#mask0_3157_2609)"><path d="M6.56094 31.5L4.46094 29.4L19.8359 14.025C19.3859 12.975 19.3234 11.7875 19.6484 10.4625C19.9734 9.1375 20.6859 7.95 21.7859 6.9C23.1109 5.575 24.5859 4.8 26.2109 4.575C27.8359 4.35 29.1609 4.75 30.1859 5.775C31.2109 6.8 31.6109 8.125 31.3859 9.75C31.1609 11.375 30.3859 12.85 29.0609 14.175C28.0109 15.275 26.8234 15.9875 25.4984 16.3125C24.1734 16.6375 22.9859 16.575 21.9359 16.125L20.0609 18L31.4609 29.4L29.3609 31.5L17.9609 20.175L6.56094 31.5ZM10.9859 18.675L6.48594 14.175C5.13594 12.825 4.46094 11.2125 4.46094 9.3375C4.46094 7.4625 5.13594 5.85 6.48594 4.5L15.7859 13.875L10.9859 18.675Z" fill="#289283"/></g></svg> Foodica <span>Lite</span></h1>
+                        <h1 class="wpz-onboard_title"><svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_3157_2609" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#D9D9D9"/></mask><g mask="url(#mask0_3157_2609)"><path d="M6.56094 31.5L4.46094 29.4L19.8359 14.025C19.3859 12.975 19.3234 11.7875 19.6484 10.4625C19.9734 9.1375 20.6859 7.95 21.7859 6.9C23.1109 5.575 24.5859 4.8 26.2109 4.575C27.8359 4.35 29.1609 4.75 30.1859 5.775C31.2109 6.8 31.6109 8.125 31.3859 9.75C31.1609 11.375 30.3859 12.85 29.0609 14.175C28.0109 15.275 26.8234 15.9875 25.4984 16.3125C24.1734 16.6375 22.9859 16.575 21.9359 16.125L20.0609 18L31.4609 29.4L29.3609 31.5L17.9609 20.175L6.56094 31.5ZM10.9859 18.675L6.48594 14.175C5.13594 12.825 4.46094 11.2125 4.46094 9.3375C4.46094 7.4625 5.13594 5.85 6.48594 4.5L15.7859 13.875L10.9859 18.675Z" fill="#289283"/></g></svg> <?php esc_html_e( 'Foodica', 'foodica' ); ?> <span><?php esc_html_e( 'Lite', 'foodica' ); ?></span></h1>
                         <h2 class="wpz-onboard_framework-version">v <?php echo esc_html( $parent->get( 'Version' ) ); ?></h2>
                     </div>
 
                     <ul class="wpz-onboard_tabs">
-                        <li class="wpz-onboard_tab wpz-onboard_tab-quick-start"><a href="#quick-start" title="Quick Start"><svg width="18" height="18" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166992 14.5V0.333332H7.66699L8.00033 2H12.667V10.3333H6.83366L6.50033 8.66667H1.83366V14.5H0.166992ZM8.20866 8.66667H11.0003V3.66667H6.62533L6.29199 2H1.83366V7H7.87533L8.20866 8.66667Z" fill="#000"></path></svg> <?php esc_html_e( 'Quick Start', 'foodica' ); ?></a></li>
+                        <li class="wpz-onboard_tab wpz-onboard_tab-quick-start"><a href="#quick-start" title="<?php esc_attr_e( 'Quick Start', 'foodica' ); ?>"><svg width="18" height="18" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166992 14.5V0.333332H7.66699L8.00033 2H12.667V10.3333H6.83366L6.50033 8.66667H1.83366V14.5H0.166992ZM8.20866 8.66667H11.0003V3.66667H6.62533L6.29199 2H1.83366V7H7.87533L8.20866 8.66667Z" fill="#000"></path></svg> <?php esc_html_e( 'Quick Start', 'foodica' ); ?></a></li>
 
-                        <li class="wpz-onboard_tab wpz-onboard_tab-theme-child"><a href="#vs-pro" title="Free vs. PRO"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M15 5.75C11.5482 5.75 8.75 8.54822 8.75 12C8.75 15.4518 11.5482 18.25 15 18.25C15.9599 18.25 16.8674 18.0341 17.6782 17.6489C18.0523 17.4712 18.4997 17.6304 18.6774 18.0045C18.8552 18.3787 18.696 18.8261 18.3218 19.0038C17.3141 19.4825 16.1873 19.75 15 19.75C10.7198 19.75 7.25 16.2802 7.25 12C7.25 7.71979 10.7198 4.25 15 4.25C19.2802 4.25 22.75 7.71979 22.75 12C22.75 12.7682 22.638 13.5115 22.429 14.2139C22.3108 14.6109 21.8932 14.837 21.4962 14.7188C21.0992 14.6007 20.8731 14.1831 20.9913 13.7861C21.1594 13.221 21.25 12.6218 21.25 12C21.25 8.54822 18.4518 5.75 15 5.75Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M5.25 5C5.25 4.58579 5.58579 4.25 6 4.25H15C15.4142 4.25 15.75 4.58579 15.75 5C15.75 5.41421 15.4142 5.75 15 5.75H6C5.58579 5.75 5.25 5.41421 5.25 5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M4.75 8.5C4.75 8.08579 5.08579 7.75 5.5 7.75H8.5C8.91421 7.75 9.25 8.08579 9.25 8.5C9.25 8.91421 8.91421 9.25 8.5 9.25H5.5C5.08579 9.25 4.75 8.91421 4.75 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M1.25 8.5C1.25 8.08579 1.58579 7.75 2 7.75H3.5C3.91421 7.75 4.25 8.08579 4.25 8.5C4.25 8.91421 3.91421 9.25 3.5 9.25H2C1.58579 9.25 1.25 8.91421 1.25 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M3.25 12.5C3.25 12.0858 3.58579 11.75 4 11.75H8C8.41421 11.75 8.75 12.0858 8.75 12.5C8.75 12.9142 8.41421 13.25 8 13.25H4C3.58579 13.25 3.25 12.9142 3.25 12.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M12.376 8.58397C12.5151 8.37533 12.7492 8.25 13 8.25H17C17.2508 8.25 17.4849 8.37533 17.624 8.58397L19.624 11.584C19.792 11.8359 19.792 12.1641 19.624 12.416L17.624 15.416C17.4849 15.6247 17.2508 15.75 17 15.75H13C12.7492 15.75 12.5151 15.6247 12.376 15.416L10.376 12.416C10.208 12.1641 10.208 11.8359 10.376 11.584L12.376 8.58397ZM13.4014 9.75L11.9014 12L13.4014 14.25H16.5986L18.0986 12L16.5986 9.75H13.4014Z" fill="black" fill-rule="evenodd"/></svg> <?php esc_html_e( 'Free vs. PRO', 'foodica' ); ?></a></li>
+                        <li class="wpz-onboard_tab wpz-onboard_tab-theme-child"><a href="#vs-pro" title="<?php esc_attr_e( 'Free vs. PRO', 'foodica' ); ?>"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M15 5.75C11.5482 5.75 8.75 8.54822 8.75 12C8.75 15.4518 11.5482 18.25 15 18.25C15.9599 18.25 16.8674 18.0341 17.6782 17.6489C18.0523 17.4712 18.4997 17.6304 18.6774 18.0045C18.8552 18.3787 18.696 18.8261 18.3218 19.0038C17.3141 19.4825 16.1873 19.75 15 19.75C10.7198 19.75 7.25 16.2802 7.25 12C7.25 7.71979 10.7198 4.25 15 4.25C19.2802 4.25 22.75 7.71979 22.75 12C22.75 12.7682 22.638 13.5115 22.429 14.2139C22.3108 14.6109 21.8932 14.837 21.4962 14.7188C21.0992 14.6007 20.8731 14.1831 20.9913 13.7861C21.1594 13.221 21.25 12.6218 21.25 12C21.25 8.54822 18.4518 5.75 15 5.75Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M5.25 5C5.25 4.58579 5.58579 4.25 6 4.25H15C15.4142 4.25 15.75 4.58579 15.75 5C15.75 5.41421 15.4142 5.75 15 5.75H6C5.58579 5.75 5.25 5.41421 5.25 5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M4.75 8.5C4.75 8.08579 5.08579 7.75 5.5 7.75H8.5C8.91421 7.75 9.25 8.08579 9.25 8.5C9.25 8.91421 8.91421 9.25 8.5 9.25H5.5C5.08579 9.25 4.75 8.91421 4.75 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M1.25 8.5C1.25 8.08579 1.58579 7.75 2 7.75H3.5C3.91421 7.75 4.25 8.08579 4.25 8.5C4.25 8.91421 3.91421 9.25 3.5 9.25H2C1.58579 9.25 1.25 8.91421 1.25 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M3.25 12.5C3.25 12.0858 3.58579 11.75 4 11.75H8C8.41421 11.75 8.75 12.0858 8.75 12.5C8.75 12.9142 8.41421 13.25 8 13.25H4C3.58579 13.25 3.25 12.9142 3.25 12.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M12.376 8.58397C12.5151 8.37533 12.7492 8.25 13 8.25H17C17.2508 8.25 17.4849 8.37533 17.624 8.58397L19.624 11.584C19.792 11.8359 19.792 12.1641 19.624 12.416L17.624 15.416C17.4849 15.6247 17.2508 15.75 17 15.75H13C12.7492 15.75 12.5151 15.6247 12.376 15.416L10.376 12.416C10.208 12.1641 10.208 11.8359 10.376 11.584L12.376 8.58397ZM13.4014 9.75L11.9014 12L13.4014 14.25H16.5986L18.0986 12L16.5986 9.75H13.4014Z" fill="black" fill-rule="evenodd"/></svg> <?php esc_html_e( 'Free vs. PRO', 'foodica' ); ?></a></li>
 
                     </ul>
                 </div>
@@ -494,7 +494,7 @@ function foodica_display_theme_page() {
 
                                                     <tr>
                                                         <td><h3><?php esc_html_e( 'Typography Options', 'foodica' ); ?></h3></td>
-                                                        <td>Limited</td>
+                                                        <td><?php esc_html_e( 'Limited', 'foodica' ); ?></td>
                                                         <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
                                                     <tr>
@@ -534,10 +534,10 @@ function foodica_display_theme_page() {
                                     </svg> <?php esc_html_e( 'Foodica PRO', 'foodica' ); ?></h3>
                                 <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Upgrade to the PRO version to get instant access to Elementor integration and pre-built demos!', 'foodica' ); ?></p>
 
-                                <a href="https://www.wpzoom.com/themes/foodica/" title="Foodica PRO" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/pro.png' ); ?>" width="300" alt="<?php echo esc_attr__( 'Foodica PRO', 'foodica' ); ?>" /></a>
+                                <a href="https://www.wpzoom.com/themes/foodica/" title="<?php esc_attr_e( 'Foodica PRO', 'foodica' ); ?>" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/pro.png' ); ?>" width="300" alt="<?php echo esc_attr__( 'Foodica PRO', 'foodica' ); ?>" /></a>
 
                                 <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://www.wpzoom.com/themes/foodica/" title="Foodica" target="_blank" class="button"><?php esc_html_e( 'Discover the PRO Version &rarr;', 'foodica' ); ?></a>
+                                    <a href="https://www.wpzoom.com/themes/foodica/" title="<?php esc_attr_e( 'Foodica', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Discover the PRO Version &rarr;', 'foodica' ); ?></a>
                                 </div>
 
                             </div>
@@ -550,7 +550,7 @@ function foodica_display_theme_page() {
                                     </svg> <?php esc_html_e( 'Need help?', 'foodica' ); ?></h3>
                                 <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Documentation is the place where you’ll find the information needed to setup the theme quickly, and other details about theme-specific features. You can also get in touch with our team by contacting us through our website or using the Support Forum.', 'foodica' ); ?></p>
                                 <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://www.wpzoom.com/documentation/foodica-lite/" title="Read documentation" target="_blank" class="button"><?php esc_html_e( 'Documentation', 'foodica' ); ?></a> <a href="https://wordpress.org/support/theme/foodica/" title="Open Support Desk" target="_blank" class="button"><?php esc_html_e( 'Support Forums', 'foodica' ); ?></a>
+                                    <a href="https://www.wpzoom.com/documentation/foodica-lite/" title="<?php esc_attr_e( 'Read documentation', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Documentation', 'foodica' ); ?></a> <a href="https://wordpress.org/support/theme/foodica/" title="<?php esc_attr_e( 'Open Support Desk', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Support Forums', 'foodica' ); ?></a>
 
                                 </div>
 
@@ -578,16 +578,16 @@ function foodica_display_theme_page() {
                                                     <input aria-label="email" aria-required="true" type="email" value="<?php echo esc_attr($current_user->user_email); ?>" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
                                                   <input type="hidden" name="ml-submit" value="1">
                                                   <span class="ml-form-embedSubmit">
-                                                    <button type="submit" class="button button-primary">Subscribe</button>
-                                                    <button disabled="disabled" style="display:none" type="button" class="loading button-primary"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only">Loading...</span> </button>
+                                                    <button type="submit" class="button button-primary"><?php esc_html_e( 'Subscribe', 'foodica' ); ?></button>
+                                                    <button disabled="disabled" style="display:none" type="button" class="loading button-primary"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only"><?php esc_html_e( 'Loading...', 'foodica' ); ?></span> </button>
                                                   </span>
                                                   <input type="hidden" name="anticsrf" value="true">
                                                 </form>
                                               </div>
                                               <div class="ml-form-successBody row-success" style="display:none">
                                                 <div class="ml-form-successContent">
-                                                  <h3>Thank you!</h3>
-                                                  <p>You have successfully joined our subscriber list.</p>
+                                                  <h3><?php esc_html_e( 'Thank you!', 'foodica' ); ?></h3>
+                                                  <p><?php esc_html_e( 'You have successfully joined our subscriber list.', 'foodica' ); ?></p>
                                                 </div>
                                               </div>
                                             </div>
@@ -607,13 +607,13 @@ function foodica_display_theme_page() {
                                 <h3 class="wpz-onboard_content-side-section-title icon-follow">
                                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                         <path fill-rule="evenodd" clip-rule="evenodd" d="M20.8971 9H14.618L15.5633 4.43L15.5932 4.11C15.5932 3.7 15.424 3.32 15.1553 3.05L14.1005 2L7.55281 8.59C7.18462 8.95 6.9657 9.45 6.9657 10V20C6.9657 21.1 7.86129 22 8.95589 22H17.9118C18.7377 22 19.4442 21.5 19.7427 20.78L22.7479 13.73C22.8375 13.5 22.8872 13.26 22.8872 13V11C22.8872 9.9 21.9917 9 20.8971 9ZM20.897 13L17.9117 20H8.95587V10L13.2746 5.66003L12.17 11H20.897V13ZM4.9755 10H0.995117V22H4.9755V10Z"></path>
-                                    </svg> Follow WPZOOM
+                                    </svg> <?php esc_html_e( 'Follow WPZOOM', 'foodica' ); ?>
                                 </h3>
-                                <p class="wpz-onboard_content-side-section-content">Follow us on social media for news and updates on all your theme needs.</p>
+                                <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Follow us on social media for news and updates on all your theme needs.', 'foodica' ); ?></p>
                                 <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://twitter.com/wpzoom" target="_blank" title="Twitter" class="button button-smaller button-rounded"><span class="dashicons dashicons-twitter"></span> <span class="icon-text">Twitter</span></a>
-                                    <a href="https://facebook.com/wpzoom" target="_blank" title="Facebook" class="button button-smaller button-rounded"><svg width="18" height="18" fill="#fff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg> <span class="icon-text">Facebook</span></a>
-                                    <a href="https://instagram.com/wpzoom" target="_blank" title="Instagram" class="button button-smaller button-rounded"><span class="dashicons dashicons-instagram"></span> <span class="icon-text">Instagram</span></a>
+                                    <a href="https://twitter.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Twitter', 'foodica' ); ?>" class="button button-smaller button-rounded"><span class="dashicons dashicons-twitter"></span> <span class="icon-text"><?php esc_html_e( 'Twitter', 'foodica' ); ?></span></a>
+                                    <a href="https://facebook.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Facebook', 'foodica' ); ?>" class="button button-smaller button-rounded"><svg width="18" height="18" fill="#fff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title><?php esc_html_e( 'Facebook', 'foodica' ); ?></title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg> <span class="icon-text"><?php esc_html_e( 'Facebook', 'foodica' ); ?></span></a>
+                                    <a href="https://instagram.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Instagram', 'foodica' ); ?>" class="button button-smaller button-rounded"><span class="dashicons dashicons-instagram"></span> <span class="icon-text"><?php esc_html_e( 'Instagram', 'foodica' ); ?></span></a>
                                 </div>
                             </div>
                         </div>
@@ -624,13 +624,13 @@ function foodica_display_theme_page() {
             </div> <!-- /#tabs -->
 
             <div class="wpz-onboard_footer">
-                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/" title="WPZOOM">WPZOOM</a></h3>
+                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/" title="<?php esc_attr_e( 'WPZOOM', 'foodica' ); ?>"><?php esc_html_e( 'WPZOOM', 'foodica' ); ?></a></h3>
 
                 <ul class="wpz-onboard_footer-links">
-                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/" target="_blank" title="Themes">Premium Themes</a></li>
-                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/" target="_blank" title="Plugins">Plugins</a></li>
-                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/" target="_blank" title="Blog">Our Blog</a></li>
-                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/" target="_blank" title="Support">Support</a></li>
+                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/" target="_blank" title="<?php esc_attr_e( 'Themes', 'foodica' ); ?>"><?php esc_html_e( 'Premium Themes', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/" target="_blank" title="<?php esc_attr_e( 'Plugins', 'foodica' ); ?>"><?php esc_html_e( 'Plugins', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/" target="_blank" title="<?php esc_attr_e( 'Blog', 'foodica' ); ?>"><?php esc_html_e( 'Our Blog', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/" target="_blank" title="<?php esc_attr_e( 'Support', 'foodica' ); ?>"><?php esc_html_e( 'Support', 'foodica' ); ?></a></li>
                 </ul>
             </div>
         </div>
