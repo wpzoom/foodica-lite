@@ -72,7 +72,7 @@ if ( ! function_exists( 'foodica_welcome_notice' ) ) {
 			</a>
 
             <div class="wpz-notice-image">
-                <a href="https://www.wpzoom.com/themes/foodica/" title="Foodica" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/foodica-top.png' ); ?>" width="233" alt="<?php echo esc_attr__( 'Foodica', 'foodica' ); ?>" /></a>
+                <a href="https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=admin-notice" title="Foodica" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/foodica-top.png' ); ?>" width="233" alt="<?php echo esc_attr__( 'Foodica', 'foodica' ); ?>" /></a>
             </div>
 
             <div class="wpz-notice-text">
@@ -91,7 +91,7 @@ if ( ! function_exists( 'foodica_welcome_notice' ) ) {
     					printf( esc_html__( '%s Dashboard &rarr;', 'foodica' ), 'Foodica' );
     					?>
     				</a>
-    				<a class="button button-secondary" href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/', 'foodica' ) ); ?>" target="_blank">
+    				<a class="button button-secondary" href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=admin-notice', 'foodica' ) ); ?>" target="_blank">
     					<?php esc_html_e( 'Discover Foodica PRO &rarr;', 'foodica' ); ?>
     				</a>
     			</div>

@@ -83,7 +83,7 @@ function foodica_display_theme_page() {
                                             <?php esc_html_e( 'Customize Foodica &rarr;', 'foodica' ); ?>
                                         </a>
 
-                                        <a href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/', 'foodica' ) ); ?>" target="_blank" class="button button-secondary">
+                                        <a href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page', 'foodica' ) ); ?>" target="_blank" class="button button-secondary">
                                             <?php esc_html_e( 'Get the PRO version &rarr;', 'foodica' ); ?>
                                         </a>
 
@@ -369,7 +369,7 @@ function foodica_display_theme_page() {
                                                             <?php esc_html_e( 'With the built-in page templates, you can quickly add useful pages to your website. The PRO version includes layouts crafted specifically for food recipe sites.', 'foodica' ); ?>
                                                         </p>
                                                         <p class="section_footer">
-                                                            <a href="<?php echo esc_url( __( 'https://demo.wpzoom.com/foodica-demo/', 'foodica' ) ); ?>" target="_blank" class="button button-primary">
+                                                            <a href="<?php echo esc_url( __( 'https://demo.wpzoom.com/foodica-demo/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page', 'foodica' ) ); ?>" target="_blank" class="button button-primary">
                                                                 <?php esc_html_e( 'Foodica PRO Demos &rarr;', 'foodica' ); ?>
                                                             </a>
 
@@ -401,7 +401,7 @@ function foodica_display_theme_page() {
 
                                             <span class="many-more"><?php esc_html_e( 'And many other premium features...', 'foodica' ); ?></span>
 
-                                            <a href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/', 'foodica' ) ); ?>" target="_blank" class="button button-large button-primary">
+                                            <a href="<?php echo esc_url( __( 'https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page', 'foodica' ) ); ?>" target="_blank" class="button button-large button-primary">
                                                 <?php esc_html_e( 'Get Foodica PRO Today &rarr;', 'foodica' ); ?>
                                             </a>
 
@@ -506,7 +506,7 @@ function foodica_display_theme_page() {
                                                         <td></td>
                                                         <td></td>
                                                         <td>
-                                                            <a href="https://www.wpzoom.com/themes/foodica/" target="_blank" class="button button-primary">
+                                                            <a href="https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" class="button button-primary">
                                                                 <?php esc_html_e( 'Get Foodica PRO Today!', 'foodica' ); ?>
                                                             </a>
                                                         </td>
@@ -534,10 +534,10 @@ function foodica_display_theme_page() {
                                     </svg> <?php esc_html_e( 'Foodica PRO', 'foodica' ); ?></h3>
                                 <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Upgrade to the PRO version to get instant access to Elementor integration and pre-built demos!', 'foodica' ); ?></p>
 
-                                <a href="https://www.wpzoom.com/themes/foodica/" title="<?php esc_attr_e( 'Foodica PRO', 'foodica' ); ?>" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/pro.png' ); ?>" width="300" alt="<?php echo esc_attr__( 'Foodica PRO', 'foodica' ); ?>" /></a>
+                                <a href="https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'Foodica PRO', 'foodica' ); ?>" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/pro.png' ); ?>" width="300" alt="<?php echo esc_attr__( 'Foodica PRO', 'foodica' ); ?>" /></a>
 
                                 <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://www.wpzoom.com/themes/foodica/" title="<?php esc_attr_e( 'Foodica', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Discover the PRO Version &rarr;', 'foodica' ); ?></a>
+                                    <a href="https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'Foodica', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Discover the PRO Version &rarr;', 'foodica' ); ?></a>
                                 </div>
 
                             </div>
@@ -550,7 +550,7 @@ function foodica_display_theme_page() {
                                     </svg> <?php esc_html_e( 'Need help?', 'foodica' ); ?></h3>
                                 <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Documentation is the place where you’ll find the information needed to setup the theme quickly, and other details about theme-specific features. You can also get in touch with our team by contacting us through our website or using the Support Forum.', 'foodica' ); ?></p>
                                 <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://www.wpzoom.com/documentation/foodica-lite/" title="<?php esc_attr_e( 'Read documentation', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Documentation', 'foodica' ); ?></a> <a href="https://wordpress.org/support/theme/foodica/" title="<?php esc_attr_e( 'Open Support Desk', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Support Forums', 'foodica' ); ?></a>
+                                    <a href="https://www.wpzoom.com/documentation/foodica-lite/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'Read documentation', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Documentation', 'foodica' ); ?></a> <a href="https://wordpress.org/support/theme/foodica/" title="<?php esc_attr_e( 'Open Support Desk', 'foodica' ); ?>" target="_blank" class="button"><?php esc_html_e( 'Support Forums', 'foodica' ); ?></a>
 
                                 </div>
 
@@ -624,13 +624,13 @@ function foodica_display_theme_page() {
             </div> <!-- /#tabs -->
 
             <div class="wpz-onboard_footer">
-                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/" title="<?php esc_attr_e( 'WPZOOM', 'foodica' ); ?>"><?php esc_html_e( 'WPZOOM', 'foodica' ); ?></a></h3>
+                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'WPZOOM', 'foodica' ); ?>"><?php esc_html_e( 'WPZOOM', 'foodica' ); ?></a></h3>
 
                 <ul class="wpz-onboard_footer-links">
-                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/" target="_blank" title="<?php esc_attr_e( 'Themes', 'foodica' ); ?>"><?php esc_html_e( 'Premium Themes', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/" target="_blank" title="<?php esc_attr_e( 'Plugins', 'foodica' ); ?>"><?php esc_html_e( 'Plugins', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/" target="_blank" title="<?php esc_attr_e( 'Blog', 'foodica' ); ?>"><?php esc_html_e( 'Our Blog', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/" target="_blank" title="<?php esc_attr_e( 'Support', 'foodica' ); ?>"><?php esc_html_e( 'Support', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Themes', 'foodica' ); ?>"><?php esc_html_e( 'Premium Themes', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Plugins', 'foodica' ); ?>"><?php esc_html_e( 'Plugins', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Blog', 'foodica' ); ?>"><?php esc_html_e( 'Our Blog', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Support', 'foodica' ); ?>"><?php esc_html_e( 'Support', 'foodica' ); ?></a></li>
                 </ul>
             </div>
         </div>
