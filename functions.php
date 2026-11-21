@@ -46,7 +46,8 @@ function foodica_setup() {
 		'secondary' => __( 'Top Menu', 'foodica' ),
         'primary' => __( 'Main Menu', 'foodica' ),
         'mobile' => __( 'Mobile Menu', 'foodica' ),
-        'tertiary' => __( 'Footer Menu', 'foodica' )
+        'tertiary' => __( 'Footer Menu', 'foodica' ),
+        'index' => __( 'Recipe Index Menu', 'foodica' )
 	) );
 
     /*
@@ -120,6 +121,9 @@ function foodica_setup() {
 
     // Add support for default block styles.
     add_theme_support( 'wp-block-styles' );
+
+    // Responsive embedded content (videos added with blocks).
+    add_theme_support( 'responsive-embeds' );
 
     // Add support for editor styles.
     add_theme_support( 'editor-styles' );
@@ -201,11 +205,12 @@ function foodica_enqueue_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	Foodica_Fonts_Manager::render_fonts();
 
-	wp_enqueue_style( 'dashicons' );
-
     wp_enqueue_script( 'slicknav', get_template_directory_uri() . '/assets/js/foodica-slicknav.min.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
-    wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+    // The slider script is only needed where the slider is shown (see index.php).
+    if ( is_front_page() && is_home() && ! is_paged() && foodica_get_featured_content() ) {
+        wp_enqueue_script( 'flickity', get_template_directory_uri() . '/assets/js/flickity.pkgd.min.js', array(), wp_get_theme()->get( 'Version' ), true );
+    }
 
     wp_enqueue_script( 'fitvids', get_template_directory_uri() . '/assets/js/foodica-jquery.fitvids.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
 
@@ -294,7 +299,7 @@ function foodica_widgets_init() {
     register_sidebar(array(
         'name'=>__('Header Social Icons', 'foodica' ),
         'id' => 'header_social',
-        'description' => 'Widget area in the header. Install the "Social Icons Widget by WPZOOM" plugin and add the widget here.',
+        'description' => __( 'Widget area in the header. Install the "Social Icons Widget by WPZOOM" plugin and add the widget here.', 'foodica' ),
         'before_widget' => '<div id="%1$s" class="widget %2$s">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="title"><span>',

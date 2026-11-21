@@ -5,7 +5,7 @@ Author: WPZOOM
 Author URI: https://www.wpzoom.com/
 Description: Foodica is a clean and modern WordPress theme designed for food blogs, recipe websites, and culinary magazines. With a beautiful featured slider, well-structured layouts, and built-in WooCommerce support, Foodica helps you showcase your recipes and content in a visually appealing and professional way. Includes a dedicated Recipe Index template, making it easy for visitors to browse and discover your recipes. The theme is fully GDPR-compliant, with no external Google Fonts, all fonts are hosted locally to improve privacy and performance. Foodica is easy to customize, responsive, and optimized for readability on all devices. For the demo and additional features available in the Pro version, visit: https://www.wpzoom.com/themes/foodica/
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink
-Version: 1.3.4
+Version: 1.3.5
 Requires at least: 6.4
 Requires PHP: 7.4
 Tested up to: 7.1
@@ -190,6 +190,23 @@ html {
      overflow: hidden;
      clip: rect(0, 0, 0, 0);
      border: 0;
+}
+ .skip-link:focus {
+     clip: auto;
+     width: auto;
+     height: auto;
+     margin: 0;
+     padding: 15px 23px 14px;
+     top: 5px;
+     left: 5px;
+     z-index: 100000;
+     background: #fff;
+     color: #222;
+     font-size: 14px;
+     font-weight: bold;
+     line-height: normal;
+     text-decoration: none;
+     box-shadow: 0 0 2px 2px rgba(0, 0, 0, .6);
 }
  p {
      margin: 0 0 10px
@@ -533,11 +550,8 @@ div.navigation a.btn-primary:hover {
 
 @font-face {
   font-family: 'foodica';
-  src:  url('assets/fonts/foodica.eot');
-  src:  url('assets/fonts/foodica.eot') format('embedded-opentype'),
-    url('assets/fonts/foodica.ttf') format('truetype'),
-    url('assets/fonts/foodica.woff') format('woff'),
-    url('assets/fonts/foodica.svg') format('svg');
+  src:  url('assets/fonts/foodica.woff') format('woff'),
+    url('assets/fonts/foodica.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -709,16 +723,16 @@ a:hover, a:focus {
      left: 100%;
 }
  .sf-arrows .sf-with-ul:after {
-     content: "\f347";
+     content: "\e908";
      display: inline-block;
      -webkit-font-smoothing: antialiased;
-     font: normal 12px/16px 'dashicons';
+     font: normal 12px/16px 'foodica';
      vertical-align: top;
      margin: 2px 0 0 4px;
 }
  .sf-arrows ul .sf-with-ul:after {
-     content: "\f345";
-     font: normal 12px/9px 'dashicons';
+     content: "\e907";
+     font: normal 12px/9px 'foodica';
      float: right;
 }
  .sf-arrows ul li > .sf-with-ul:focus:after, .sf-arrows ul li:hover > .sf-with-ul:after, .sf-arrows ul .sfHover > .sf-with-ul:after {
@@ -2201,11 +2215,11 @@ h4.jp-relatedposts-post-title {
 }
 
 .previous_post_pag .prevnext_container:before {
-    content: "\f341";
+    content: "\e909";
     display: inline-block;
     vertical-align: middle;
     -webkit-font-smoothing: antialiased;
-    font: normal 20px/100% 'dashicons';
+    font: normal 20px/100% 'foodica';
     margin: 0;
     color: #363940;
     speak: none;
@@ -2217,11 +2231,11 @@ h4.jp-relatedposts-post-title {
  }
 
 .next_post_pag .prevnext_container:after {
-     content: "\f345";
+     content: "\e907";
      display: inline-block;
      vertical-align: middle;
      -webkit-font-smoothing: antialiased;
-     font: normal 20px/100% 'dashicons';
+     font: normal 20px/100% 'foodica';
      margin: 0;
      color: #363940;
      speak: none;
@@ -2873,10 +2887,10 @@ h4.jp-relatedposts-post-title {
 }
 
 .slicknav_nav .slicknav_arrow:after {
-  content: "\f347";
+  content: "\e908";
   display: inline-block;
   -webkit-font-smoothing: antialiased;
-  font: 22px/16px 'dashicons';
+  font: 22px/16px 'foodica';
   vertical-align: middle;
   margin: 0 0 0 4px;
 }

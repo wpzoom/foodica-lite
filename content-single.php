@@ -21,8 +21,8 @@
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <div class="entry-meta">
             <?php printf( '<span class="entry-author">%s ', __( 'Written by', 'foodica' ) ); the_author_posts_link(); print('</span>'); ?>
-            <span class="entry-date"><?php _e( 'on', 'foodica' ); ?> <?php printf( '<time class="entry-date" datetime="%1$s">%2$s</time> ', esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() ) ); ?></span>
-            <span class="entry-category"><?php _e( 'in', 'foodica' ); ?> <?php the_category( ', ' ); ?></span>
+            <span class="entry-date"><?php esc_html_e( 'on', 'foodica' ); ?> <?php printf( '<time class="entry-date" datetime="%1$s">%2$s</time> ', esc_attr( get_the_date( 'c' ) ), esc_html( get_the_date() ) ); ?></span>
+            <span class="entry-category"><?php esc_html_e( 'in', 'foodica' ); ?> <?php the_category( ', ' ); ?></span>
             <?php edit_post_link( __( 'Edit', 'foodica' ), '<span class="edit-link">', '</span>' ); ?>
         </div>
     </header><!-- .entry-header -->
@@ -47,7 +47,7 @@
     <?php the_tags( '<div class="tag_list">' . __( '<h4>Tags</h4>', 'foodica' ). ' ', ' ',  '</div>'  ); ?>
 
     <div class="share">
-        <a href="javascript:window.print()" title="<?php esc_attr_e( 'Print this Page', 'foodica' ); ?>" class="print"><?php _e( 'Print', 'foodica' ) ?></a>
+        <a href="javascript:window.print()" title="<?php esc_attr_e( 'Print this Page', 'foodica' ); ?>" class="print"><?php esc_html_e( 'Print', 'foodica' ); ?></a>
         <div class="clear"></div>
     </div>
 

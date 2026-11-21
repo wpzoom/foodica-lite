@@ -92,9 +92,9 @@ get_header();
                         /* translators: %s: trackback link */
 						printf( __( 'Comments are closed, but you can leave a trackback: <a class="trackback-link" href="%s" title="Trackback URL for your post" rel="trackback">Trackback URL</a>.', 'foodica' ), get_trackback_url() );
 					elseif ( comments_open() && ! pings_open() ) : // Only comments open
-						_e( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'foodica' );
+						echo wp_kses_post( __( 'Trackbacks are closed, but you can <a class="comment-link" href="#respond" title="Post a comment">post a comment</a>.', 'foodica' ) );
 					elseif ( ! comments_open() && ! pings_open() ) : // Comments and trackbacks closed
-						_e( 'Both comments and trackbacks are currently closed.', 'foodica' );
+						esc_html_e( 'Both comments and trackbacks are currently closed.', 'foodica' );
 					endif;
 					edit_post_link( __( 'Edit', 'foodica' ), '<span class="edit-link"> / ', '</span>' ); ?>
 			</div><!-- .entry-meta -->

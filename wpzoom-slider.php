@@ -16,9 +16,9 @@ if ( empty( $slider ) )
 
             <?php
 
-            $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'foodica-loop-sticky');
+            $large_image_url = has_post_thumbnail() ? wp_get_attachment_image_src( get_post_thumbnail_id(), 'foodica-loop-sticky' ) : false;
 
-            $style = ' style="background-image:url(\'' . esc_url( $large_image_url[0] ) . '\')"';
+            $style = $large_image_url ? ' style="background-image:url(\'' . esc_url( $large_image_url[0] ) . '\')"' : '';
 
             ?>
 

@@ -11,7 +11,7 @@
 
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-    <link rel="preload" as="font" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/fonts/foodica.ttf" type="font/ttf" crossorigin>
+    <link rel="preload" as="font" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/fonts/foodica.woff" type="font/woff" crossorigin>
 
 	<?php wp_head(); ?>
 
@@ -23,11 +23,13 @@
     wp_body_open();
     ?>
 
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'foodica' ); ?></a>
+
 	<div class="page-wrap">
 
         <header class="site-header">
 
-            <nav class="top-navbar" role="navigation">
+            <nav class="top-navbar" aria-label="<?php esc_attr_e( 'Top menu', 'foodica' ); ?>">
 
                 <div class="inner-wrap">
 
@@ -67,7 +69,7 @@
             </div>
 
 
-            <nav class="main-navbar" role="navigation">
+            <nav class="main-navbar" aria-label="<?php esc_attr_e( 'Main menu', 'foodica' ); ?>">
 
                 <div class="inner-wrap">
 

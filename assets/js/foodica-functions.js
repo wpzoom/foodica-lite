@@ -74,7 +74,7 @@
                     $(this).text(zoomOptions.index_infinite_loading_txt);
                     wpz_currPage++;
 
-                    $.get(wpz_pagingURL + wpz_currPage + '/', function (data) {
+                    $.get(wpz_pagingURL.replace('%#%', wpz_currPage), function (data) {
                         var $newItems = $('.foodica-index article', data);
 
                         $newItems.addClass('hidden').hide();
@@ -131,7 +131,7 @@
                 //prevNextButtons: false,
                 pageDots: true,
                 wrapAround: true,
-                accessibility: false
+                accessibility: true
             });
         });
     };

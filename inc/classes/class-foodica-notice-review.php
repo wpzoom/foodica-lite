@@ -37,6 +37,11 @@ class foodica_Notice_Review extends foodica_Notices {
 			update_option( 'foodica_theme_installed_time', time() );
 		}
 
+		// Ask for a review only after the theme has been in use for two weeks.
+		if ( time() - (int) get_option( 'foodica_theme_installed_time' ) < 14 * DAY_IN_SECONDS ) {
+			return;
+		}
+
 		$this_notice_was_dismissed = $this->get_notice_status( 'review-user-' . $this->current_user_id );
 
         $current_user_can      = current_user_can( 'edit_theme_options' );

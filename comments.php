@@ -19,7 +19,7 @@ if ( post_password_required() )
 
         <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
         <nav id="comment-nav-below" class="navigation clearfix">
-            <h1 class="assistive-text"><?php _e( 'Comment navigation', 'foodica' ); ?></h1>
+            <h1 class="assistive-text"><?php esc_html_e( 'Comment navigation', 'foodica' ); ?></h1>
             <span class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'foodica' ) ); ?></span>
             <span class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'foodica' ) ); ?></span>
         </nav>
@@ -30,7 +30,7 @@ if ( post_password_required() )
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 
-        <p class="nocomments"><?php _e( 'Comments are closed.', 'foodica' ); ?></p>
+        <p class="nocomments"><?php esc_html_e( 'Comments are closed.', 'foodica' ); ?></p>
 
     <?php
     endif;

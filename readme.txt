@@ -1,8 +1,9 @@
 === Foodica ===
 Contributors: WPZOOM
-Requires at least: 6.0
+Requires at least: 6.4
 Tested up to: 7.1
-Version: 1.3.4
+Requires PHP: 7.4
+Version: 1.3.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, rtl-language-support
@@ -19,7 +20,7 @@ More customization options & features are available in the paid version.
 = How to Configure the Slider? =
 
 This theme uses the featured content module of the Jetpack plugin to setup the slider.
-Visit this page: http://jetpack.me/ to read more about Jetpack and how to install it.
+Visit this page: https://jetpack.com/ to read more about Jetpack and how to install it.
 
 After installing and activating the Jetpack plugin follow these steps:
 
@@ -27,6 +28,17 @@ After installing and activating the Jetpack plugin follow these steps:
 2. Check additional settings in Customizer > Featured Content
 
 == Changelog ==
+
+= 1.3.5 =
+* Fixed: the menu on the Recipe Index page never appeared. Assign a menu to the new "Recipe Index Menu" location in Appearance > Menus
+* Fixed: "Load More" on the Recipe Index page didn't work with plain permalinks
+* Fixed: the search form had a double slash in its address and repeated the same ids when shown more than once on a page
+* Fixed: a PHP warning in the homepage slider when a featured post has no featured image
+* Accessibility: added a "Skip to content" link, a label for the search field, names for the top and main menus, and keyboard support in the homepage slider
+* Performance: the Dashicons stylesheet is no longer loaded on the front end; menu and post navigation arrows now use the theme's own icon font
+* Performance: the slider script loads only on the homepage when the slider is shown
+* Added support for responsive embedded videos in the block editor
+* The review request in the dashboard now appears after two weeks of use instead of right after activation
 
 = 1.3.4 =
 * Improved translation support
@@ -123,7 +135,7 @@ Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
 = Fonts =
 *  Roboto - https://www.google.com/fonts/specimen/Roboto
    License: Apache License 2.0
-   Lince URL: https://www.apache.org/licenses/LICENSE-2.0
+   License URL: https://www.apache.org/licenses/LICENSE-2.0
 
 *  Roboto Slab - https://fonts.google.com/specimen/Roboto+Slab
    License: Apache License 2.0
@@ -131,17 +143,17 @@ Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
 
 *  Roboto Condensed - https://fonts.google.com/specimen/Roboto+Condensed
    License: Apache License 2.0
-   Lincese URL: https://www.apache.org/licenses/LICENSE-2.0
+   License URL: https://www.apache.org/licenses/LICENSE-2.0
 
 *  Libre Franklin - https://fonts.google.com/specimen/Libre+Franklin
    License: Open Font License
    License URL: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
 
-*  Dashicons - https://developer.wordpress.org/resource/dashicons
+*  Dashicons (arrow icons in assets/fonts/foodica) - https://developer.wordpress.org/resource/dashicons
    License: GNU GPL License 2.0
    License URL: https://www.gnu.org/licenses/gpl-2.0.html
 
-*  Material Icon set - https://material.io/tools/icons/?search=print&icon=print&style=baseline
+*  Material Icon set (print and search icons in assets/fonts/foodica) - https://material.io/tools/icons/?search=print&icon=print&style=baseline
    License: Apache 2.0
    License URL: https://www.apache.org/licenses/LICENSE-2.0.html
 
@@ -158,10 +170,10 @@ Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
 
 *  FitVids (https://github.com/davatron5000/FitVids.js)
    License: WTFPL license
-   Lincese URL: http://sam.zoy.org/wtfpl/
+   License URL: http://sam.zoy.org/wtfpl/
 
 *  SlickNav (http://slicknav.io/)
-   Licnese: MIT license
+   License: MIT license
    License URL: https://github.com/ComputerWolf/SlickNav/blob/master/MIT-LICENSE.txt
 
 *  jQuery Superfish Menu Plugin (https://superfish.joelbirch.co/ )
@@ -171,3 +183,7 @@ Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
 *  Expanding Search Bar, Copyright 2013, Codrops https://github.com/codrops/ExpandingSearchBar, https://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
    License: MIT license
    License URL: http://www.opensource.org/licenses/mit-license.php
+= PHP =
+*  TGM Plugin Activation, Copyright (c) 2011, Thomas Griffin, Gary Jones, Juliette Reinders Folmer http://tgmpluginactivation.com/
+   License: GNU GPL License 2.0 or later
+   License URL: https://www.gnu.org/licenses/gpl-2.0.html
