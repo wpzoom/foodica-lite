@@ -34,7 +34,9 @@ if ( ! class_exists( 'Foodica_Enqueue_Scripts_Admin' ) ) {
 		 */
 		public function admin_scripts($hook) {
 
-            wp_enqueue_style( 'foodica-admin', get_template_directory_uri() . '/assets/admin/css/admin.css', array(), wp_get_theme()->get( 'Version' ) );
+            // Versioned by file time so admin style changes are never served from the browser cache.
+            $admin_css = get_template_directory() . '/assets/admin/css/admin.css';
+            wp_enqueue_style( 'foodica-admin', get_template_directory_uri() . '/assets/admin/css/admin.css', array(), file_exists( $admin_css ) ? filemtime( $admin_css ) : wp_get_theme()->get( 'Version' ) );
 
             if ( 'appearance_page_page-foodica' != $hook ) {
 

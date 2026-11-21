@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-21T08:06:23+00:00\n"
+"POT-Creation-Date: 2026-11-21T09:03:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: foodica\n"
@@ -18,8 +18,9 @@ msgstr ""
 #: style.css
 #: inc/admin-notice.php:75
 #: inc/classes/class-foodica-notice-review.php:86
-#: inc/theme-info-page.php:58
-#: inc/theme-info-page.php:540
+#: inc/theme-info-page.php:27
+#: inc/theme-info-page.php:188
+#: inc/theme-info-page.php:816
 msgid "Foodica"
 msgstr ""
 
@@ -35,7 +36,7 @@ msgstr ""
 
 #. Author of the theme
 #: style.css
-#: inc/theme-info-page.php:614
+#: inc/theme-info-page.php:214
 msgid "WPZOOM"
 msgstr ""
 
@@ -345,424 +346,6 @@ msgstr ""
 
 #: inc/admin-notice.php:95
 msgid "Discover Foodica PRO &rarr;"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:327
-msgid "Install Required Plugins"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
-msgstr ""
-
-#. translators: %s: plugin name.
-#: inc/class-tgm-plugin-activation.php:330
-#, php-format
-msgid "Installing Plugin: %s"
-msgstr ""
-
-#. translators: %s: plugin name.
-#: inc/class-tgm-plugin-activation.php:332
-#, php-format
-msgid "Updating Plugin: %s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
-msgstr ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:334
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:340
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:346
-#, php-format
-msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
-msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:352
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:358
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name(s).
-#: inc/class-tgm-plugin-activation.php:364
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:370
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:375
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:380
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:386
-#: inc/class-tgm-plugin-activation.php:827
-#: inc/class-tgm-plugin-activation.php:2533
-#: inc/class-tgm-plugin-activation.php:3580
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:387
-#: inc/class-tgm-plugin-activation.php:3159
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:388
-#: inc/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: plugin name.
-#: inc/class-tgm-plugin-activation.php:390
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: inc/class-tgm-plugin-activation.php:392
-#, php-format
-msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
-msgstr ""
-
-#. translators: 1: dashboard link.
-#: inc/class-tgm-plugin-activation.php:394
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:395
-msgid "Dismiss this notice"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:396
-msgid "There are one or more required or recommended plugins to install, update or activate."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:397
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:522
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:523
-msgid "Update Required"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:934
-msgid "The remote plugin package does not contain a folder with the desired slug and renaming did not work."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:934
-#: inc/class-tgm-plugin-activation.php:937
-msgid "Please contact the plugin provider and ask them to package their plugin according to the WordPress guidelines."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:937
-msgid "The remote plugin package consists of more than one file, but the files are not packaged in a folder."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:1121
-#: inc/class-tgm-plugin-activation.php:2948
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#. translators: %s: version number
-#: inc/class-tgm-plugin-activation.php:1982
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2273
-msgid "Required"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2276
-msgid "Recommended"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2292
-msgid "WordPress Repository"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2295
-msgid "External Source"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2298
-msgid "Pre-Packaged"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2315
-msgid "Not Installed"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2321
-msgid "Active"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2327
-msgid "Required Update not Available"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2330
-msgid "Requires Update"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2333
-msgid "Update recommended"
-msgstr ""
-
-#. translators: 1: install status, 2: update status
-#: inc/class-tgm-plugin-activation.php:2342
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#. translators: 1: number of plugins.
-#: inc/class-tgm-plugin-activation.php:2388
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: number of plugins.
-#: inc/class-tgm-plugin-activation.php:2392
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: number of plugins.
-#: inc/class-tgm-plugin-activation.php:2396
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#. translators: 1: number of plugins.
-#: inc/class-tgm-plugin-activation.php:2400
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: inc/class-tgm-plugin-activation.php:2482
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2490
-msgid "Installed version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2498
-msgid "Minimum required version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2510
-msgid "Available version:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2533
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2547
-msgid "Plugin"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2548
-msgid "Source"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2549
-msgid "Type"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2553
-msgid "Version"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
-#. translators: %2$s: plugin name in screen reader markup
-#: inc/class-tgm-plugin-activation.php:2603
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#. translators: %2$s: plugin name in screen reader markup
-#: inc/class-tgm-plugin-activation.php:2608
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#. translators: %2$s: plugin name in screen reader markup
-#: inc/class-tgm-plugin-activation.php:2614
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2684
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2717
-#: inc/jetpack/plugin-enhancements.php:283
-msgid "Install"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2723
-msgid "Update"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2726
-#: inc/jetpack/plugin-enhancements.php:273
-msgid "Activate"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2759
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2802
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2908
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:2934
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3158
-msgid "Plugin activation failed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/class-tgm-plugin-activation.php:3498
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#. translators: 1: plugin name, 2: error message.
-#: inc/class-tgm-plugin-activation.php:3501
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: inc/class-tgm-plugin-activation.php:3503
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3507
-msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#. translators: 1: plugin name.
-#: inc/class-tgm-plugin-activation.php:3509
-#: inc/class-tgm-plugin-activation.php:3517
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/class-tgm-plugin-activation.php:3512
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3515
-msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
-msgstr ""
-
-#: inc/class-tgm-plugin-activation.php:3518
-msgid "All installations have been completed."
-msgstr ""
-
-#. translators: 1: plugin name, 2: action number 3: total number of actions.
-#: inc/class-tgm-plugin-activation.php:3520
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: inc/classes/class-foodica-font-family-manager.php:219
@@ -1263,7 +846,7 @@ msgid "Jetpack plugin"
 msgstr ""
 
 #: inc/jetpack/plugin-enhancements.php:121
-#: inc/theme-info-page.php:173
+#: inc/theme-info-page.php:449
 msgid "Site Logo"
 msgstr ""
 
@@ -1304,9 +887,18 @@ msgstr ""
 msgid " Please activate %1$s. %2$s"
 msgstr ""
 
+#: inc/jetpack/plugin-enhancements.php:273
+#: inc/recommended-plugins.php:269
+msgid "Activate"
+msgstr ""
+
 #: inc/jetpack/plugin-enhancements.php:281
 #, php-format
 msgid " Please install %1$s. %2$s"
+msgstr ""
+
+#: inc/jetpack/plugin-enhancements.php:283
+msgid "Install"
 msgstr ""
 
 #: inc/jetpack/plugin-enhancements.php:308
@@ -1322,350 +914,536 @@ msgstr ""
 msgid "Your request was processed. See ya!"
 msgstr ""
 
-#: inc/theme-info-page.php:19
+#: inc/recommended-plugins.php:26
+msgid "Beautiful recipe cards for your posts, with ingredients, steps, nutrition, ratings and the Schema markup Google needs for recipe results."
+msgstr ""
+
+#: inc/recommended-plugins.php:28
+msgid "Recipes"
+msgstr ""
+
+#: inc/recommended-plugins.php:35
+msgid "Imports the Foodica Lite demo (posts, pages, menus and widgets) so you can start from a finished site."
+msgstr ""
+
+#: inc/recommended-plugins.php:37
+msgid "Demo Import"
+msgstr ""
+
+#: inc/recommended-plugins.php:44
+msgid "Social media icons for the header and sidebar, and share buttons for your recipes. 400+ icons."
+msgstr ""
+
+#: inc/recommended-plugins.php:46
+#: inc/recommended-plugins.php:55
+msgid "Social Media"
+msgstr ""
+
+#: inc/recommended-plugins.php:53
+msgid "Show your Instagram feed in the sidebar or anywhere on your site."
+msgstr ""
+
+#: inc/recommended-plugins.php:62
+msgid "Simple contact forms built with blocks, for your Contact page."
+msgstr ""
+
+#: inc/recommended-plugins.php:64
+msgid "Contact Form"
+msgstr ""
+
+#: inc/recommended-plugins.php:71
+msgid "Ready-made block layouts for food blogs: recipe roundups, about sections, newsletter boxes and more."
+msgstr ""
+
+#: inc/recommended-plugins.php:73
+msgid "Patterns"
+msgstr ""
+
+#: inc/recommended-plugins.php:80
+msgid "Powers the homepage slider: Foodica shows the posts tagged \"featured\" with Jetpack's Featured Content."
+msgstr ""
+
+#: inc/recommended-plugins.php:82
+msgid "Slider"
+msgstr ""
+
+#: inc/recommended-plugins.php:94
+msgid "Edit your site by chatting with Claude or ChatGPT: change pages, colors and layouts, or turn the demo into your own site."
+msgstr ""
+
+#: inc/recommended-plugins.php:96
+msgid "AI"
+msgstr ""
+
+#: inc/recommended-plugins.php:159
+msgid "You do not have permission to install plugins."
+msgstr ""
+
+#: inc/recommended-plugins.php:193
+msgid "The plugin could not be installed. Please install it from Plugins > Add New."
+msgstr ""
+
+#: inc/recommended-plugins.php:200
+msgid "The plugin was installed but could not be found. Please activate it from the Plugins page."
+msgstr ""
+
+#: inc/recommended-plugins.php:225
+msgid "This plugin is not on the recommended list."
+msgstr ""
+
+#: inc/recommended-plugins.php:267
+#: inc/recommended-plugins.php:334
+msgid "Active"
+msgstr ""
+
+#: inc/recommended-plugins.php:271
+msgid "Install & Activate"
+msgstr ""
+
+#: inc/recommended-plugins.php:281
+msgid "Recommended"
+msgstr ""
+
+#: inc/recommended-plugins.php:284
+msgid "View on wordpress.org"
+msgstr ""
+
+#. translators: %s: rating out of 5
+#: inc/recommended-plugins.php:289
+#, php-format
+msgid "%s out of 5 stars"
+msgstr ""
+
+#: inc/recommended-plugins.php:295
+msgid "Active installations"
+msgstr ""
+
+#: inc/recommended-plugins.php:333
+msgid "Installing..."
+msgstr ""
+
+#: inc/recommended-plugins.php:335
+msgid "Something went wrong. Please install the plugin from Plugins > Add New."
+msgstr ""
+
+#: inc/recommended-plugins.php:364
+#: inc/theme-info-page.php:58
+#: inc/theme-info-page.php:198
+msgid "Recommended Plugins"
+msgstr ""
+
+#: inc/recommended-plugins.php:365
+msgid "Free plugins that add recipe cards, social icons, forms and the demo importer to Foodica. Install the ones you need with one click."
+msgstr ""
+
+#: inc/recommended-plugins.php:368
+msgid "Install & Activate All"
+msgstr ""
+
+#: inc/recommended-plugins.php:377
+msgid "Nice to Have"
+msgstr ""
+
+#: inc/recommended-plugins.php:378
+msgid "Not needed, but they add extra features."
+msgstr ""
+
+#: inc/theme-info-page.php:26
+#: inc/theme-info-page.php:37
 msgid "Foodica Theme Dashboard"
 msgstr ""
 
-#: inc/theme-info-page.php:20
-msgid "Foodica Theme"
+#: inc/theme-info-page.php:38
+msgid "Theme Dashboard"
 msgstr ""
 
-#: inc/theme-info-page.php:58
+#: inc/theme-info-page.php:48
+#: inc/theme-info-page.php:49
+#: inc/theme-info-page.php:139
+#: inc/theme-info-page.php:140
+#: inc/theme-info-page.php:197
+msgid "Import Demo"
+msgstr ""
+
+#: inc/theme-info-page.php:59
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/theme-info-page.php:67
+#: inc/theme-info-page.php:68
+msgid "Customize"
+msgstr ""
+
+#: inc/theme-info-page.php:188
 msgid "Lite"
 msgstr ""
 
-#: inc/theme-info-page.php:63
+#: inc/theme-info-page.php:193
 msgid "Quick Start"
 msgstr ""
 
-#: inc/theme-info-page.php:65
+#: inc/theme-info-page.php:195
 msgid "Free vs. PRO"
 msgstr ""
 
-#: inc/theme-info-page.php:78
-msgid "Welcome to Foodica!"
-msgstr ""
-
-#: inc/theme-info-page.php:79
-msgid "Thank you for installing the free version of our theme! Below you can find quick links to different sections where you can configure and customize the theme. The free version includes limited features and customization options, but if you need more flexibility and plan to take your website to the next level, make sure to check the PRO version."
-msgstr ""
-
-#: inc/theme-info-page.php:83
-msgid "Customize Foodica &rarr;"
-msgstr ""
-
-#: inc/theme-info-page.php:86
-#: inc/theme-info-page.php:404
-msgid "https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page"
-msgstr ""
-
-#: inc/theme-info-page.php:87
-msgid "Get the PRO version &rarr;"
-msgstr ""
-
-#: inc/theme-info-page.php:96
-msgid "Customize & Configure"
-msgstr ""
-
-#: inc/theme-info-page.php:176
-msgid "If you have a logo image, you can upload it in the Site Identity section in the Customizer, and it will appear in your website's header."
-msgstr ""
-
-#: inc/theme-info-page.php:181
-msgid "Customize &rarr;"
-msgstr ""
-
-#: inc/theme-info-page.php:202
-msgid "Colors & Fonts"
-msgstr ""
-
-#: inc/theme-info-page.php:205
-msgid "Set up your global colors and fonts to match your site with your brand."
-msgstr ""
-
-#: inc/theme-info-page.php:212
-msgid "Customize Colors &rarr;"
+#: inc/theme-info-page.php:217
+msgid "Themes"
 msgstr ""
 
 #: inc/theme-info-page.php:217
+msgid "Premium Themes"
+msgstr ""
+
+#: inc/theme-info-page.php:218
+msgid "Plugins"
+msgstr ""
+
+#: inc/theme-info-page.php:219
+msgid "Blog"
+msgstr ""
+
+#: inc/theme-info-page.php:219
+msgid "Our Blog"
+msgstr ""
+
+#: inc/theme-info-page.php:220
+#: inc/theme-info-page.php:777
+msgid "Support"
+msgstr ""
+
+#: inc/theme-info-page.php:251
+msgid "Import the Foodica demo"
+msgstr ""
+
+#: inc/theme-info-page.php:252
+msgid "Importing the demo is the fastest way to set up your site: posts, pages, menus and widgets like on the Foodica Lite demo, ready for you to replace with your own recipes. The import is done by the free Inspiro Starter Sites plugin."
+msgstr ""
+
+#: inc/theme-info-page.php:256
+msgid "Installing Inspiro Starter Sites..."
+msgstr ""
+
+#: inc/theme-info-page.php:257
+#: inc/theme-info-page.php:278
+#: inc/theme-info-page.php:281
+msgid "Install Inspiro Starter Sites"
+msgstr ""
+
+#: inc/theme-info-page.php:259
+msgid "View the demo &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:280
+msgid "Something went wrong. Please install Inspiro Starter Sites from Plugins > Add New."
+msgstr ""
+
+#: inc/theme-info-page.php:287
+msgid "Ask a site administrator to install the Inspiro Starter Sites plugin."
+msgstr ""
+
+#: inc/theme-info-page.php:350
+msgid "Welcome to Foodica!"
+msgstr ""
+
+#: inc/theme-info-page.php:351
+msgid "Thank you for installing the free version of our theme! Below you can find quick links to different sections where you can configure and customize the theme. The free version includes limited features and customization options, but if you need more flexibility and plan to take your website to the next level, make sure to check the PRO version."
+msgstr ""
+
+#: inc/theme-info-page.php:355
+msgid "Import Demo &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:359
+msgid "Customize Foodica &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:362
+#: inc/theme-info-page.php:680
+msgid "https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page"
+msgstr ""
+
+#: inc/theme-info-page.php:363
+msgid "Get the PRO version &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:372
+msgid "Customize & Configure"
+msgstr ""
+
+#: inc/theme-info-page.php:452
+msgid "If you have a logo image, you can upload it in the Site Identity section in the Customizer, and it will appear in your website's header."
+msgstr ""
+
+#: inc/theme-info-page.php:457
+msgid "Customize &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:478
+msgid "Colors & Fonts"
+msgstr ""
+
+#: inc/theme-info-page.php:481
+msgid "Set up your global colors and fonts to match your site with your brand."
+msgstr ""
+
+#: inc/theme-info-page.php:488
+msgid "Customize Colors &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:493
 msgid "Typography Options &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:230
+#: inc/theme-info-page.php:506
 msgid "Adding Recipe Cards"
 msgstr ""
 
-#: inc/theme-info-page.php:233
+#: inc/theme-info-page.php:509
 #, php-format
 msgid "Using the free version of our %1$sRecipe Card Blocks%2$s plugin, you can quickly add recipe cards in your blog posts theme!"
 msgstr ""
 
-#: inc/theme-info-page.php:241
+#: inc/theme-info-page.php:517
 msgid "Add a New Recipe &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:247
+#: inc/theme-info-page.php:523
 msgid "Install Recipe Card Blocks &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:252
+#: inc/theme-info-page.php:528
 msgid "https://recipecard.io/documentation/recipe-card-blocks-pro-how-to-use-the-recipe-card-blocks/"
 msgstr ""
 
-#: inc/theme-info-page.php:253
+#: inc/theme-info-page.php:529
 msgid "How to Create a Recipe Card?"
 msgstr ""
 
-#: inc/theme-info-page.php:267
+#: inc/theme-info-page.php:543
 msgid "Premium Features"
 msgstr ""
 
-#: inc/theme-info-page.php:273
+#: inc/theme-info-page.php:549
 msgid "WooCommerce Support"
 msgstr ""
 
-#: inc/theme-info-page.php:276
+#: inc/theme-info-page.php:552
 msgid "Need to sell something? With the Foodica PRO theme, you can build your shop and start selling anything easily! The theme is fully compatible with the WooCommerce plugin."
 msgstr ""
 
-#: inc/theme-info-page.php:300
-#: inc/theme-info-page.php:456
+#: inc/theme-info-page.php:576
+#: inc/theme-info-page.php:732
 msgid "Elementor Integration"
 msgstr ""
 
-#: inc/theme-info-page.php:303
+#: inc/theme-info-page.php:579
 msgid "The PRO version will unlock Premium Elementor features such as Slideshow widget, Elementor demo and more!"
 msgstr ""
 
-#: inc/theme-info-page.php:325
+#: inc/theme-info-page.php:601
 msgid "Theme Options Panel"
 msgstr ""
 
-#: inc/theme-info-page.php:327
+#: inc/theme-info-page.php:603
 msgid "Using the Theme Options panel, you can configure different features and functionalities in the theme as you want. Additional customization options are available in the Customizer, while different options for features like Recipe Index can be found on the Theme Options page."
 msgstr ""
 
-#: inc/theme-info-page.php:356
+#: inc/theme-info-page.php:632
 msgid "Customize Every Detail"
 msgstr ""
 
-#: inc/theme-info-page.php:358
+#: inc/theme-info-page.php:634
 msgid "No more custom CSS! The Premium version gives you access to numerous customization options, and you can change the theme's color and font styles of each element."
 msgstr ""
 
-#: inc/theme-info-page.php:367
+#: inc/theme-info-page.php:643
 msgid "Custom Page Templates"
 msgstr ""
 
-#: inc/theme-info-page.php:369
+#: inc/theme-info-page.php:645
 msgid "With the built-in page templates, you can quickly add useful pages to your website. The PRO version includes layouts crafted specifically for food recipe sites."
 msgstr ""
 
-#: inc/theme-info-page.php:372
+#: inc/theme-info-page.php:648
 msgid "https://demo.wpzoom.com/foodica-demo/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page"
 msgstr ""
 
-#: inc/theme-info-page.php:373
+#: inc/theme-info-page.php:649
 msgid "Foodica PRO Demos &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:382
+#: inc/theme-info-page.php:658
 msgid "Block Patterns for Food Blogs"
 msgstr ""
 
-#: inc/theme-info-page.php:384
+#: inc/theme-info-page.php:660
 msgid "The PRO version includes additional block patterns to help you build unique page layouts. You can find different patterns to add sections like recipe categories, call-to-actions and more!"
 msgstr ""
 
-#: inc/theme-info-page.php:390
+#: inc/theme-info-page.php:666
 msgid "Multiple Header & Footer Layouts"
 msgstr ""
 
-#: inc/theme-info-page.php:393
+#: inc/theme-info-page.php:669
 msgid "Upgrading to the Premium version, you will get access to Multiple Header & Footer Layouts."
 msgstr ""
 
-#: inc/theme-info-page.php:402
+#: inc/theme-info-page.php:678
 msgid "And many other premium features..."
 msgstr ""
 
-#: inc/theme-info-page.php:405
+#: inc/theme-info-page.php:681
 msgid "Get Foodica PRO Today &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:415
+#: inc/theme-info-page.php:691
 msgid "Foodica Lite vs. Foodica PRO"
 msgstr ""
 
-#: inc/theme-info-page.php:416
+#: inc/theme-info-page.php:692
 msgid "Below is a comparison chart of the free and the premium versions."
 msgstr ""
 
-#: inc/theme-info-page.php:423
+#: inc/theme-info-page.php:699
 msgid "Feature"
 msgstr ""
 
-#: inc/theme-info-page.php:424
+#: inc/theme-info-page.php:700
 msgid "Foodica Lite"
 msgstr ""
 
-#: inc/theme-info-page.php:425
-#: inc/theme-info-page.php:534
-#: inc/theme-info-page.php:537
+#: inc/theme-info-page.php:701
+#: inc/theme-info-page.php:810
+#: inc/theme-info-page.php:813
 msgid "Foodica PRO"
 msgstr ""
 
-#: inc/theme-info-page.php:430
+#: inc/theme-info-page.php:706
 msgid "Responsive Layout"
 msgstr ""
 
-#: inc/theme-info-page.php:435
+#: inc/theme-info-page.php:711
 msgid "Live Customizer"
 msgstr ""
 
-#: inc/theme-info-page.php:440
+#: inc/theme-info-page.php:716
 msgid "Starter Sites"
 msgstr ""
 
-#: inc/theme-info-page.php:445
+#: inc/theme-info-page.php:721
 msgid "Color Schemes"
 msgstr ""
 
-#: inc/theme-info-page.php:451
+#: inc/theme-info-page.php:727
 msgid "Slider Styles"
 msgstr ""
 
-#: inc/theme-info-page.php:461
+#: inc/theme-info-page.php:737
 msgid "Advanced WooCommerce Integration"
 msgstr ""
 
-#: inc/theme-info-page.php:466
+#: inc/theme-info-page.php:742
 msgid "Demo Content Importer"
 msgstr ""
 
-#: inc/theme-info-page.php:472
+#: inc/theme-info-page.php:748
 msgid "Post Layouts"
 msgstr ""
 
-#: inc/theme-info-page.php:478
+#: inc/theme-info-page.php:754
 msgid "Header & Footer Layouts"
 msgstr ""
 
-#: inc/theme-info-page.php:484
+#: inc/theme-info-page.php:760
 msgid "Theme Options"
 msgstr ""
 
-#: inc/theme-info-page.php:490
+#: inc/theme-info-page.php:766
 msgid "Advertisting Options"
 msgstr ""
 
-#: inc/theme-info-page.php:496
+#: inc/theme-info-page.php:772
 msgid "Typography Options"
 msgstr ""
 
-#: inc/theme-info-page.php:497
+#: inc/theme-info-page.php:773
 msgid "Limited"
 msgstr ""
 
-#: inc/theme-info-page.php:501
-#: inc/theme-info-page.php:620
-msgid "Support"
-msgstr ""
-
-#: inc/theme-info-page.php:502
+#: inc/theme-info-page.php:778
 msgid "Support Forum"
 msgstr ""
 
-#: inc/theme-info-page.php:503
+#: inc/theme-info-page.php:779
 msgid "Fast Email Support"
 msgstr ""
 
-#: inc/theme-info-page.php:510
+#: inc/theme-info-page.php:786
 msgid "Get Foodica PRO Today!"
 msgstr ""
 
-#: inc/theme-info-page.php:535
+#: inc/theme-info-page.php:811
 msgid "Upgrade to the PRO version to get instant access to Elementor integration and pre-built demos!"
 msgstr ""
 
-#: inc/theme-info-page.php:540
+#: inc/theme-info-page.php:816
 msgid "Discover the PRO Version &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:550
+#: inc/theme-info-page.php:826
 msgid "Need help?"
 msgstr ""
 
-#: inc/theme-info-page.php:551
+#: inc/theme-info-page.php:827
 msgid "Documentation is the place where you’ll find the information needed to setup the theme quickly, and other details about theme-specific features. You can also get in touch with our team by contacting us through our website or using the Support Forum."
 msgstr ""
 
-#: inc/theme-info-page.php:553
+#: inc/theme-info-page.php:829
 msgid "Read documentation"
 msgstr ""
 
-#: inc/theme-info-page.php:553
+#: inc/theme-info-page.php:829
 msgid "Documentation"
 msgstr ""
 
-#: inc/theme-info-page.php:553
+#: inc/theme-info-page.php:829
 msgid "Open Support Desk"
 msgstr ""
 
-#: inc/theme-info-page.php:553
+#: inc/theme-info-page.php:829
 msgid "Support Forums"
 msgstr ""
 
-#: inc/theme-info-page.php:567
+#: inc/theme-info-page.php:843
 msgid "Subscribe for Tips & Tricks"
 msgstr ""
 
-#: inc/theme-info-page.php:570
+#: inc/theme-info-page.php:846
 msgid "To ease up the journey you’re starting with Foodica, we’re sending you some useful tips & tricks to have the best experience building your website."
 msgstr ""
 
-#: inc/theme-info-page.php:581
+#: inc/theme-info-page.php:857
 msgid "Subscribe"
 msgstr ""
 
-#: inc/theme-info-page.php:597
+#: inc/theme-info-page.php:873
 msgid "Follow WPZOOM"
 msgstr ""
 
-#: inc/theme-info-page.php:599
+#: inc/theme-info-page.php:875
 msgid "Follow us on social media for news and updates on all your theme needs."
 msgstr ""
 
-#: inc/theme-info-page.php:601
-msgid "Twitter"
+#: inc/theme-info-page.php:883
+msgid "Join our Facebook groups to ask questions and share your site:"
 msgstr ""
 
-#: inc/theme-info-page.php:602
-msgid "Facebook"
+#: inc/theme-info-page.php:885
+msgid "WPZOOM Community"
 msgstr ""
 
-#: inc/theme-info-page.php:603
-msgid "Instagram"
-msgstr ""
-
-#: inc/theme-info-page.php:617
-msgid "Themes"
-msgstr ""
-
-#: inc/theme-info-page.php:617
-msgid "Premium Themes"
-msgstr ""
-
-#: inc/theme-info-page.php:618
-msgid "Plugins"
-msgstr ""
-
-#: inc/theme-info-page.php:619
-msgid "Blog"
-msgstr ""
-
-#: inc/theme-info-page.php:619
-msgid "Our Blog"
+#: inc/theme-info-page.php:886
+msgid "Recipe Card Blocks"
 msgstr ""
 
 #: inc/widgets.php:48

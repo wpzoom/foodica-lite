@@ -386,102 +386,6 @@ add_action( 'save_post', 'foodica_save_post' );
 
 
 /**
- * Include the TGM_Plugin_Activation class.
- */
-require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
-
-add_action( 'tgmpa_register', 'foodica_register_required_plugins' );
-/**
- * Register the required plugins for this theme.
- *
- * The variable passed to tgmpa_register_plugins() should be an array of plugin
- * arrays.
- *
- * This function is hooked into tgmpa_init, which is fired within the
- * TGM_Plugin_Activation class constructor.
- */
-function foodica_register_required_plugins() {
-    $recipe_card_plugin = array(
-        'name'         => 'Recipe Card Blocks',
-        'slug'         => 'recipe-card-blocks-by-wpzoom',
-        'required'     => false
-    );
-
-    if ( class_exists( 'WPZOOM_Recipe_Card_Block_Gutenberg' ) ) {
-
-        if ( WPZOOM_Recipe_Card_Block_Gutenberg::has_pro() ) {
-
-            $recipe_card_plugin = array(
-                'name'         => 'Recipe Card Blocks PRO',
-                'slug'         => 'recipe-card-blocks-by-wpzoom-pro',
-                'required'     => false
-            );
-
-        }
-
-    }
-
-    /*
-     * Array of plugin arrays. Required keys are name and slug.
-     * If the source is NOT from the .org repo, then source is also required.
-     */
-    $plugins = array(
-
-        // Recommended plugins from the WordPress Plugin Repository.
-        array(
-            'name'      => 'Social Icons Widget by WPZOOM',
-            'slug'      => 'social-icons-widget-by-wpzoom',
-            'required'  => false,
-        ),
-
-        array(
-            'name'         => 'Instagram Widget by WPZOOM',
-            'slug'         => 'instagram-widget-by-wpzoom',
-            'required'     => false,
-        ),
-
-        array(
-            'name'         => 'WPZOOM Forms',
-            'slug'         => 'wpzoom-forms',
-            'required'     => false,
-        ),
-
-        array(
-            'name'         => 'Block Patterns for Food Bloggers',
-            'slug'         => 'block-patterns-for-food-bloggers',
-            'required'     => false,
-        ),
-
-        $recipe_card_plugin
-
-    );
-
-    /*
-     * Array of configuration settings. Amend each line as needed.
-     *
-     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
-     * strings available, please help us make TGMPA even better by giving us access to these translations or by
-     * sending in a pull-request with .po file(s) with the translations.
-     *
-     * Only uncomment the strings in the config array if you want to customize the strings.
-     */
-    $config = array(
-        'id'           => 'foodica',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-        'default_path' => '',                      // Default absolute path to bundled plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-        'message'      => '',                      // Message to output right before the plugins table.
-
-    );
-
-    tgmpa( $plugins, $config );
-}
-
-
-/**
  * Enqueues scripts and styles
  */
 require FOODICA_THEME_DIR . 'inc/classes/class-foodica-enqueue-scripts.php';
@@ -494,6 +398,7 @@ require FOODICA_THEME_DIR . 'inc/classes/class-foodica-enqueue-scripts.php';
 if ( is_admin() ) {
     require FOODICA_THEME_DIR . 'inc/admin-notice.php';
     require FOODICA_THEME_DIR . 'inc/theme-info-page.php';
+    require FOODICA_THEME_DIR . 'inc/recommended-plugins.php';
 
     if ( current_user_can( 'manage_options' ) ) {
         require FOODICA_THEME_DIR . 'inc/classes/class-foodica-notices.php';

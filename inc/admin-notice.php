@@ -81,11 +81,11 @@ if ( ! function_exists( 'foodica_welcome_notice' ) ) {
     			<p>
     			<?php
     			/* translators: %1$s: Foodica theme %2$s: anchor tag open %3$s: anchor tag close */
-    			printf( esc_html__( 'Thank you for installing %1$s theme! To get started please make sure you visit the %2$sgetting started page%3$s.', 'foodica' ), 'Foodica', '<a target="_blank" href="' . esc_url( admin_url( 'themes.php?page=foodica' ) ) . '">', '</a>' );
+    			printf( esc_html__( 'Thank you for installing %1$s theme! To get started please make sure you visit the %2$sgetting started page%3$s.', 'foodica' ), 'Foodica', '<a target="_blank" href="' . esc_url( admin_url( 'admin.php?page=foodica' ) ) . '">', '</a>' );
     			?>
     			</p>
     			<div class="wpz-welcome-notice-button">
-    				<a class="button button-primary" href="<?php echo esc_url( admin_url( 'themes.php?page=foodica' ) ); ?>">
+    				<a class="button button-primary" href="<?php echo esc_url( admin_url( 'admin.php?page=foodica' ) ); ?>">
     					<?php
     					/* translators: %s: Foodica theme */
     					printf( esc_html__( '%s Dashboard &rarr;', 'foodica' ), 'Foodica' );

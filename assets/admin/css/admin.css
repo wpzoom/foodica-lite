@@ -327,10 +327,9 @@
     font-size: 14px;
 }
 
-.appearance_page_foodica div#setting-error-tgmpa,
-.appearance_page_foodica .update-nag,
-.appearance_page_foodica .notice,
-.appearance_page_foodica div.error {
+.toplevel_page_foodica .update-nag,
+.toplevel_page_foodica .notice,
+.toplevel_page_foodica div.error {
     display: none;
 }
 
@@ -584,40 +583,43 @@
     padding: 0;
     margin: 0 0 24px;
 }
-
+/* Demo importer layout (from Inspiro Lite's admin.css, used by the Inspiro Starter Sites importer). */
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps {
     counter-reset: steps;
     list-style: none;
     padding: 0;
     margin: 0;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step {
     padding: 0 0 60px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #dddddd;
     margin: 0 0 60px;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step:last-child {
     padding-bottom: 0;
     border-bottom: none;
     margin-bottom: 0;
 }
-
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content.premium ul li {
+    padding: 0;
+}
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content.premium ul li.fade-in {
+    animation: _fadeIn 1 0.5s ease-in-out forwards;
+}
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content.premium ul li.fade-out {
+    animation: _fadeOut 1 0.5s ease-in-out forwards;
+}
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul {
     padding: 0;
     margin: 0;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li {
-    padding: 0 0 0 2rem;
+    padding: 0 0 2rem;
     margin: 0 0 20px;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li:last-child {
     margin-bottom: 0;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li h5 {
     position: relative;
     font-size: 14px;
@@ -625,54 +627,68 @@
     padding: 0;
     margin: 0 0 5px;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li h5 label {
     vertical-align: inherit;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li h5 label input {
     position: absolute;
     left: -2rem;
     margin: 0;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step .wpz-onboard_content-main-step-content ul li p {
     padding: 0;
     margin: 0;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 60px;
+    gap: 35px;
     padding: 0;
     margin: 0;
 }
-
-.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li {
-    padding: 0;
-    margin: 0;
-}
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure {
     margin: 0;
     padding: 0;
 }
-
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail-demo {
+    position: relative;
+    background-color: #000;
+    min-width: 200px;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: inset 0 0 0 1px rgba(36, 38, 40, 0.05), 0 10px 10px rgba(36, 38, 40, 0.1);
+    overflow: hidden;
+    margin: 0 0 20px;
+    transition: all 0.2s ease;
+    border: 1px solid #c3c3c3;
+}
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail-demo img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+    transition: all 0.2s ease;
+}
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail-demo:hover img {
+    opacity: 0.8;
+}
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail {
     position: relative;
     background-color: rgba(36, 38, 40, 0.05);
     background-size: cover;
     background-position: top center;
+    min-width: 200px;
     width: 100%;
-    padding-top: 97.5%;
-    border-radius: 4px;
-    box-shadow: inset 0 0 0 1px rgba(36, 38, 40, 0.05), 0 10px 10px rgba(36, 38, 40, 0.1);
+    padding-top: 74.5%;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(36, 38, 40, 0.1);
     overflow: hidden;
     margin: 0 0 20px;
     transition: all 0.2s ease;
+    border: 1px solid #c3c3c3;
 }
-
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail.ocdi-import {
+    padding-top: 76.5%;
+}
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail .button-select-template {
     position: absolute;
     text-decoration: none;
@@ -680,18 +696,18 @@
     left: 50%;
     z-index: 3;
     font-size: 13px;
-    color: #fff;
-    background-color: #121738;
+    color: #000;
+    background-color: #fff;
     border: none;
     padding: 9px;
     text-align: center;
     width: 80%;
-    border-radius: 2px;
+    border-radius: 4px;
     transform: translate(-50%, -50%);
     opacity: 0;
     transition: all 0.2s ease;
+    font-weight: 600;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure .preview-thumbnail::before {
     content: "";
     position: absolute;
@@ -704,73 +720,62 @@
     opacity: 0;
     transition: all 0.2s ease;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure:hover .preview-thumbnail::before {
     opacity: 1;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure:hover .preview-thumbnail .button-select-template {
     opacity: 1;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure:hover .preview-thumbnail .button-select-template:hover {
-    opacity: .8;
+    opacity: 0.8;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption {
     position: relative;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption h5 {
     font-size: 18px;
     font-weight: 600;
     white-space: nowrap;
-    margin: 0 0 10px;
+    margin: 0 0 20px;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption p {
-    -js-display: flex;
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     line-height: 2;
     padding: 0;
-    margin: 0;
+    margin-bottom: 15px;
     position: relative;
+    color: #5e6164;
 }
-
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption p svg {
+    margin-left: 5px;
+}
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption p a {
     font-size: 13px;
     font-weight: 600;
     text-decoration: none;
     color: #121738;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption p a:hover, .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption p a:active {
-    color: #289283;
+    color: rgb(87.3947368421, 92.25, 97.1052631579);
 }
-
-.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption input[type="radio"] {
+.wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li figure figcaption input[type=radio] {
     display: none;
     position: static;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.selected-template .preview-thumbnail, .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.preparing-view-template .preview-thumbnail {
     cursor: initial;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.selected-template .preview-thumbnail::before, .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.preparing-view-template .preview-thumbnail::before {
-    background-color: rgba(52, 150, 255, 0.8);
+    background-color: rgba(18, 23, 56, 0.8);
     opacity: 1;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.selected-template .preview-thumbnail .button-select-template, .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul li.preparing-view-template .preview-thumbnail .button-select-template {
     color: #121738;
-    background-color: #fff;
+    background-color: #ffffff;
     opacity: 1;
     cursor: initial;
 }
-
 .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-side {
     flex-grow: 1;
 }
@@ -960,4 +965,193 @@
     .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-side {
         flex-basis: 0;
     }
+}
+
+/* Import Demo page: the Inspiro Starter Sites importer grid on wide screens (from Inspiro Lite). */
+@media (min-width: 1441px) {
+    .wpz-onboard_wrapper .wpz-onboard_content-wrapper .wpz-onboard_content .wpz-onboard_content-main .wpz-onboard_content-main-steps .wpz-onboard_content-main-step.step-choose-design form ul {
+        grid-template-columns: repeat(auto-fill, minmax(268px, 1fr));
+    }
+}
+
+/* Follow WPZOOM: square icon buttons with the icon centered. */
+.wp-core-ui .wpz-onboard_wrapper .foodica-social-icons .button.button-rounded {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    min-height: 40px;
+    padding: 0;
+    margin: 0 8px 8px 0;
+}
+
+.wpz-onboard_wrapper .foodica-social-icons svg {
+    display: block;
+}
+
+.wpz-onboard_wrapper .foodica-fb-groups-intro {
+    margin-top: 10px;
+}
+
+/* Recommended Plugins page (layout from Inspiro Lite). */
+.foodica-plugins-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 0 0 25px;
+}
+
+.foodica-plugins-header .wpz-onboard_content-main-intro {
+    margin-bottom: 0;
+}
+
+.foodica-plugins-header .button {
+    flex-shrink: 0;
+}
+
+.foodica-plugins-optional-title {
+    margin-top: 40px !important;
+}
+
+.wpz-grid-wrap.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.wpz-grid-wrap .foodica-plugin-item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-item-icon {
+    flex-shrink: 0;
+    margin: 0.625rem 0;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-item-icon img {
+    display: block;
+    border-radius: 5px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item h4 {
+    margin: 10px 0 0;
+    font-size: 16px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 6px 0 8px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-badge.category {
+    background-color: #f0f0f1;
+    color: #50575e;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-badge.recommended {
+    background-color: #e7f5e8;
+    color: #1e7e34;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-view-details {
+    display: inline-block;
+    font-size: 12px;
+    color: #2271b1;
+    text-decoration: none;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-view-details:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-stats {
+    display: flex;
+    gap: 12px;
+    font-size: 12px;
+    color: #646970;
+    margin: 6px 0 8px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-stats .plugin-installs,
+.wpz-grid-wrap .foodica-plugin-item .plugin-stats .plugin-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-stats .dashicons {
+    font-size: 14px;
+    width: 14px;
+    height: 14px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-stats .dashicons-star-filled {
+    color: #ffb900;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .about {
+    margin: 0 0 15px;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .section_footer {
+    margin: 0;
+}
+
+.wpz-grid-wrap .foodica-plugin-item .plugin-item-error {
+    margin: 10px 0 0;
+    color: #b32d2e;
+}
+
+.wpz-grid-wrap .foodica-plugin-item.plugin-item--loading {
+    opacity: .7;
+}
+
+@media screen and (max-width: 1512px) {
+    .wpz-grid-wrap.three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 782px) {
+    .foodica-plugins-header {
+        display: block;
+    }
+
+    .foodica-plugins-header .button {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .wpz-grid-wrap.three {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+/* Outline gray button (used by the demo importer for "View Demo"), as in Inspiro Lite. */
+.wp-core-ui .wpz-onboard_wrapper .button.button-secondary-gray {
+    color: #444;
+    background: transparent;
+    border: 1px solid #878787;
+}
+
+.wp-core-ui .wpz-onboard_wrapper .button.button-secondary-gray:hover,
+.wp-core-ui .wpz-onboard_wrapper .button.button-secondary-gray:focus {
+    color: #121738;
+    background: transparent;
+    border-color: #121738;
 }

@@ -10,21 +10,296 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * About Theme Page
+ * Foodica admin menu: a top-level "Foodica" menu with the theme dashboard,
+ * the demo importer, the recommended plugins and the Customizer.
+ *
+ * Registered before other admin_menu callbacks (priority 9) so the
+ * Inspiro Starter Sites plugin can add its importer page to it.
  *
  * @return void
  */
 function foodica_theme_info_page() {
-	add_theme_page(
+	// Fork and spoon icon (SVG).
+	$icon = 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzNiAzNiI+PHBhdGggZmlsbD0iYmxhY2siIGQ9Ik02LjU2IDMxLjUgNC40NiAyOS40bDE1LjM4LTE1LjM4Yy0uNDUtMS4wNS0uNTEtMi4yNC0uMTktMy41Ni4zMy0xLjMzIDEuMDQtMi41MSAyLjE0LTMuNTYgMS4zMy0xLjMzIDIuOC0yLjEgNC40My0yLjMzIDEuNjItLjIyIDIuOTUuMTggMy45NyAxLjIgMS4wMyAxLjAzIDEuNDMgMi4zNSAxLjIgMy45OC0uMjIgMS42Mi0xIDMuMS0yLjMyIDQuNDItMS4wNSAxLjEtMi4yNCAxLjgxLTMuNTYgMi4xNC0xLjMzLjMyLTIuNTEuMjYtMy41Ni0uMTlMMjAuMDYgMThsMTEuNCAxMS40LTIuMSAyLjEtMTEuNC0xMS4zM1pNMTAuOTkgMTguNjhsLTQuNS00LjVjLTEuMzUtMS4zNS0yLjAzLTIuOTctMi4wMy00Ljg0IDAtMS44OC42OC0zLjQ5IDIuMDMtNC44NGw5LjMgOS4zOFoiLz48L3N2Zz4=';
+
+	add_menu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_menu_page
 		esc_html__( 'Foodica Theme Dashboard', 'foodica' ),
-		esc_html__( 'Foodica Theme', 'foodica' ),
+		esc_html__( 'Foodica', 'foodica' ),
 		'edit_theme_options',
 		'foodica',
 		'foodica_display_theme_page',
-        1
+		$icon,
+		59
+	);
+
+	add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
+		'foodica',
+		esc_html__( 'Foodica Theme Dashboard', 'foodica' ),
+		esc_html__( 'Theme Dashboard', 'foodica' ),
+		'edit_theme_options',
+		'foodica',
+		'foodica_display_theme_page'
+	);
+
+	// When Inspiro Starter Sites is active it adds this page itself (see foodica_starter_sites_page_setup()).
+	if ( ! foodica_starter_sites_active() ) {
+		add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
+			'foodica',
+			esc_html__( 'Import Demo', 'foodica' ),
+			esc_html__( 'Import Demo', 'foodica' ),
+			'manage_options',
+			'foodica-demo',
+			'foodica_display_demo_page'
+		);
+	}
+
+	add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
+		'foodica',
+		esc_html__( 'Recommended Plugins', 'foodica' ),
+		esc_html__( 'Install Plugins', 'foodica' ),
+		'install_plugins',
+		'foodica-plugins',
+		'foodica_display_plugins_page'
+	);
+
+	add_submenu_page( // phpcs:ignore WPThemeReview.PluginTerritory.NoAddAdminPages.add_menu_pages_add_submenu_page
+		'foodica',
+		esc_html__( 'Customize', 'foodica' ),
+		esc_html__( 'Customize', 'foodica' ),
+		'customize',
+		'customize.php'
 	);
 }
-add_action( 'admin_menu', 'foodica_theme_info_page' );
+add_action( 'admin_menu', 'foodica_theme_info_page', 9 );
+
+/**
+ * Keep the Foodica submenu in a fixed order: Dashboard, Import Demo, Recommended Plugins, Customize,
+ * then anything plugins add.
+ *
+ * @return void
+ */
+function foodica_sort_admin_submenu() {
+	global $submenu;
+
+	if ( empty( $submenu['foodica'] ) ) {
+		return;
+	}
+
+	$order = array( 'foodica' => 0, 'foodica-demo' => 1, 'foodica-plugins' => 2, 'customize.php' => 3 );
+	$items = array_values( $submenu['foodica'] );
+
+	usort(
+		$items,
+		function ( $a, $b ) use ( $order ) {
+			$pa = isset( $order[ $a[2] ] ) ? $order[ $a[2] ] : 10;
+			$pb = isset( $order[ $b[2] ] ) ? $order[ $b[2] ] : 10;
+			return $pa - $pb;
+		}
+	);
+
+	$submenu['foodica'] = $items; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
+}
+add_action( 'admin_menu', 'foodica_sort_admin_submenu', 1000 );
+
+/**
+ * The theme page used to live under Appearance (themes.php?page=foodica). Send old links to the new place.
+ *
+ * @return void
+ */
+function foodica_redirect_old_theme_page() {
+	global $pagenow;
+
+	if ( 'themes.php' === $pagenow && isset( $_GET['page'] ) && 'foodica' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		wp_safe_redirect( admin_url( 'admin.php?page=foodica' ) );
+		exit;
+	}
+}
+add_action( 'admin_init', 'foodica_redirect_old_theme_page' );
+
+/**
+ * Whether the Inspiro Starter Sites plugin (the demo importer) is active.
+ *
+ * @return bool
+ */
+function foodica_starter_sites_active() {
+	return defined( 'INSPIRO_STARTER_SITES_VERSION' );
+}
+
+/**
+ * Put the Inspiro Starter Sites importer under the Foodica menu, as "Import Demo".
+ *
+ * @param array $setup Page settings from the plugin.
+ * @return array
+ */
+function foodica_starter_sites_page_setup( $setup ) {
+	return array_merge(
+		(array) $setup,
+		array(
+			'parent_slug' => 'foodica',
+			'page_title'  => esc_html__( 'Import Demo', 'foodica' ),
+			'menu_title'  => esc_html__( 'Import Demo', 'foodica' ),
+			'capability'  => 'manage_options',
+			'menu_slug'   => 'foodica-demo',
+		)
+	);
+}
+add_filter( 'inspiro_starter_sites/plugin_page_setup', 'foodica_starter_sites_page_setup', 20 );
+
+/**
+ * Show the importer inside the Foodica page layout (header, tabs, footer).
+ *
+ * @return callable
+ */
+function foodica_starter_sites_page_callback() {
+	return 'foodica_display_demo_page';
+}
+add_filter( 'inspiro_starter_sites/plugin_page_display_callback_function', 'foodica_starter_sites_page_callback', 20 );
+
+/**
+ * Install and activate Inspiro Starter Sites from wordpress.org (Import Demo page button).
+ *
+ * @return void
+ */
+function foodica_install_starter_sites() {
+	check_ajax_referer( 'foodica-install-starter-sites', 'security' );
+
+	$result = foodica_install_and_activate_plugin( 'inspiro-starter-sites' );
+
+	if ( is_wp_error( $result ) ) {
+		wp_send_json_error( array( 'message' => wp_strip_all_tags( $result->get_error_message() ) ) );
+	}
+
+	wp_send_json_success( array( 'redirect' => admin_url( 'admin.php?page=foodica-demo' ) ) );
+}
+add_action( 'wp_ajax_foodica_install_starter_sites', 'foodica_install_starter_sites' );
+
+/**
+ * Header of the Foodica admin pages: title, version and tabs.
+ *
+ * @param string $current Current page: 'dashboard', 'demo' or 'plugins'.
+ * @return void
+ */
+function foodica_admin_page_header( $current = 'dashboard' ) {
+	// On the dashboard the Quick Start / Free vs. PRO tabs switch in place; elsewhere they link back to it.
+	$foodica_base = 'dashboard' === $current ? '' : admin_url( 'admin.php?page=foodica' );
+	?>
+                <div class="wpz-onboard_header">
+                    <div class="wpz-onboard_title-wrapper">
+                        <h1 class="wpz-onboard_title"><svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_3157_2609" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#D9D9D9"/></mask><g mask="url(#mask0_3157_2609)"><path d="M6.56094 31.5L4.46094 29.4L19.8359 14.025C19.3859 12.975 19.3234 11.7875 19.6484 10.4625C19.9734 9.1375 20.6859 7.95 21.7859 6.9C23.1109 5.575 24.5859 4.8 26.2109 4.575C27.8359 4.35 29.1609 4.75 30.1859 5.775C31.2109 6.8 31.6109 8.125 31.3859 9.75C31.1609 11.375 30.3859 12.85 29.0609 14.175C28.0109 15.275 26.8234 15.9875 25.4984 16.3125C24.1734 16.6375 22.9859 16.575 21.9359 16.125L20.0609 18L31.4609 29.4L29.3609 31.5L17.9609 20.175L6.56094 31.5ZM10.9859 18.675L6.48594 14.175C5.13594 12.825 4.46094 11.2125 4.46094 9.3375C4.46094 7.4625 5.13594 5.85 6.48594 4.5L15.7859 13.875L10.9859 18.675Z" fill="#289283"/></g></svg> <?php esc_html_e( 'Foodica', 'foodica' ); ?> <span><?php esc_html_e( 'Lite', 'foodica' ); ?></span></h1>
+                        <h2 class="wpz-onboard_framework-version">v <?php echo esc_html( wp_get_theme( get_template() )->get( 'Version' ) ); ?></h2>
+                    </div>
+
+                    <ul class="wpz-onboard_tabs">
+                        <li class="wpz-onboard_tab wpz-onboard_tab-quick-start"><a href="<?php echo esc_url( $foodica_base ); ?>#quick-start" title="<?php esc_attr_e( 'Quick Start', 'foodica' ); ?>"><svg width="18" height="18" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166992 14.5V0.333332H7.66699L8.00033 2H12.667V10.3333H6.83366L6.50033 8.66667H1.83366V14.5H0.166992ZM8.20866 8.66667H11.0003V3.66667H6.62533L6.29199 2H1.83366V7H7.87533L8.20866 8.66667Z" fill="#000"></path></svg> <?php esc_html_e( 'Quick Start', 'foodica' ); ?></a></li>
+
+                        <li class="wpz-onboard_tab wpz-onboard_tab-theme-child"><a href="<?php echo esc_url( $foodica_base ); ?>#vs-pro" title="<?php esc_attr_e( 'Free vs. PRO', 'foodica' ); ?>"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M15 5.75C11.5482 5.75 8.75 8.54822 8.75 12C8.75 15.4518 11.5482 18.25 15 18.25C15.9599 18.25 16.8674 18.0341 17.6782 17.6489C18.0523 17.4712 18.4997 17.6304 18.6774 18.0045C18.8552 18.3787 18.696 18.8261 18.3218 19.0038C17.3141 19.4825 16.1873 19.75 15 19.75C10.7198 19.75 7.25 16.2802 7.25 12C7.25 7.71979 10.7198 4.25 15 4.25C19.2802 4.25 22.75 7.71979 22.75 12C22.75 12.7682 22.638 13.5115 22.429 14.2139C22.3108 14.6109 21.8932 14.837 21.4962 14.7188C21.0992 14.6007 20.8731 14.1831 20.9913 13.7861C21.1594 13.221 21.25 12.6218 21.25 12C21.25 8.54822 18.4518 5.75 15 5.75Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M5.25 5C5.25 4.58579 5.58579 4.25 6 4.25H15C15.4142 4.25 15.75 4.58579 15.75 5C15.75 5.41421 15.4142 5.75 15 5.75H6C5.58579 5.75 5.25 5.41421 5.25 5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M4.75 8.5C4.75 8.08579 5.08579 7.75 5.5 7.75H8.5C8.91421 7.75 9.25 8.08579 9.25 8.5C9.25 8.91421 8.91421 9.25 8.5 9.25H5.5C5.08579 9.25 4.75 8.91421 4.75 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M1.25 8.5C1.25 8.08579 1.58579 7.75 2 7.75H3.5C3.91421 7.75 4.25 8.08579 4.25 8.5C4.25 8.91421 3.91421 9.25 3.5 9.25H2C1.58579 9.25 1.25 8.91421 1.25 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M3.25 12.5C3.25 12.0858 3.58579 11.75 4 11.75H8C8.41421 11.75 8.75 12.0858 8.75 12.5C8.75 12.9142 8.41421 13.25 8 13.25H4C3.58579 13.25 3.25 12.9142 3.25 12.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M12.376 8.58397C12.5151 8.37533 12.7492 8.25 13 8.25H17C17.2508 8.25 17.4849 8.37533 17.624 8.58397L19.624 11.584C19.792 11.8359 19.792 12.1641 19.624 12.416L17.624 15.416C17.4849 15.6247 17.2508 15.75 17 15.75H13C12.7492 15.75 12.5151 15.6247 12.376 15.416L10.376 12.416C10.208 12.1641 10.208 11.8359 10.376 11.584L12.376 8.58397ZM13.4014 9.75L11.9014 12L13.4014 14.25H16.5986L18.0986 12L16.5986 9.75H13.4014Z" fill="black" fill-rule="evenodd"/></svg> <?php esc_html_e( 'Free vs. PRO', 'foodica' ); ?></a></li>
+
+                        <li class="wpz-onboard_tab wpz-onboard_tab-demo<?php echo 'demo' === $current ? ' ui-tabs-active ui-state-active' : ''; ?>"><a href="<?php echo esc_url( admin_url( 'admin.php?page=foodica-demo' ) ); ?>" title="<?php esc_attr_e( 'Import Demo', 'foodica' ); ?>"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 3v12m0 0-4.5-4.5M12 15l4.5-4.5M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <?php esc_html_e( 'Import Demo', 'foodica' ); ?></a></li>
+                        <li class="wpz-onboard_tab wpz-onboard_tab-plugins<?php echo 'plugins' === $current ? ' ui-tabs-active ui-state-active' : ''; ?>"><a href="<?php echo esc_url( admin_url( 'admin.php?page=foodica-plugins' ) ); ?>" title="<?php esc_attr_e( 'Recommended Plugins', 'foodica' ); ?>"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <?php esc_html_e( 'Recommended Plugins', 'foodica' ); ?></a></li>
+
+                    </ul>
+                </div>
+
+    <?php
+}
+
+/**
+ * Footer of the Foodica admin pages.
+ *
+ * @return void
+ */
+function foodica_admin_page_footer() {
+	?>
+            <div class="wpz-onboard_footer">
+                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'WPZOOM', 'foodica' ); ?>"><?php esc_html_e( 'WPZOOM', 'foodica' ); ?></a></h3>
+
+                <ul class="wpz-onboard_footer-links">
+                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Themes', 'foodica' ); ?>"><?php esc_html_e( 'Premium Themes', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Plugins', 'foodica' ); ?>"><?php esc_html_e( 'Plugins', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Blog', 'foodica' ); ?>"><?php esc_html_e( 'Our Blog', 'foodica' ); ?></a></li>
+                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Support', 'foodica' ); ?>"><?php esc_html_e( 'Support', 'foodica' ); ?></a></li>
+                </ul>
+            </div>
+    <?php
+}
+
+/**
+ * Import Demo page: the Inspiro Starter Sites importer, or a button that installs it.
+ *
+ * @return void
+ */
+function foodica_display_demo_page() {
+	?>
+	<div class="wpz-onboard_wrapper foodica-demo-page">
+		<div class="foodica-admin-tabs"><?php // Not "#tabs": the demo importer's script turns #tabs into jQuery UI tabs, which blocks these links. ?>
+
+			<?php foodica_admin_page_header( 'demo' ); ?>
+
+			<div class="wpz-onboard_content-wrapper">
+				<div class="wpz-onboard_content">
+					<div class="wpz-onboard_content-main foodica-demo-main">
+
+						<?php if ( foodica_starter_sites_active() ) : ?>
+
+							<div class="theme-info-wrap foodica-demo-importer">
+								<?php do_action( 'inspiro_starter_sites_admin_page' ); ?>
+							</div>
+
+						<?php else : ?>
+
+							<div class="theme-info-wrap welcome-section">
+								<h3 class="wpz-onboard_content-main-title"><?php esc_html_e( 'Import the Foodica demo', 'foodica' ); ?></h3>
+								<p class="wpz-onboard_content-main-intro"><?php esc_html_e( 'Importing the demo is the fastest way to set up your site: posts, pages, menus and widgets like on the Foodica Lite demo, ready for you to replace with your own recipes. The import is done by the free Inspiro Starter Sites plugin.', 'foodica' ); ?></p>
+
+								<?php if ( current_user_can( 'install_plugins' ) ) : ?>
+									<p class="section_footer">
+										<button type="button" class="button button-primary" id="foodica-install-starter-sites" data-installing="<?php esc_attr_e( 'Installing Inspiro Starter Sites...', 'foodica' ); ?>">
+											<?php esc_html_e( 'Install Inspiro Starter Sites', 'foodica' ); ?>
+										</button>
+										<a href="<?php echo esc_url( 'https://demo.wpzoom.com/foodica-lite/' ); ?>" target="_blank" rel="noopener" class="button button-secondary"><?php esc_html_e( 'View the demo &rarr;', 'foodica' ); ?></a>
+									</p>
+									<p class="foodica-install-starter-sites-error" role="alert" hidden></p>
+
+									<script>
+									jQuery( function ( $ ) {
+										$( '#foodica-install-starter-sites' ).on( 'click', function () {
+											var $btn = $( this ), $err = $( '.foodica-install-starter-sites-error' );
+											$btn.prop( 'disabled', true ).text( $btn.data( 'installing' ) );
+											$err.attr( 'hidden', true );
+											$.post( ajaxurl, {
+												action: 'foodica_install_starter_sites',
+												security: '<?php echo esc_js( wp_create_nonce( 'foodica-install-starter-sites' ) ); ?>'
+											} ).done( function ( res ) {
+												if ( res && res.success ) {
+													window.location.href = res.data.redirect;
+													return;
+												}
+												$err.text( res && res.data && res.data.message ? res.data.message : '' ).removeAttr( 'hidden' );
+												$btn.prop( 'disabled', false ).text( '<?php echo esc_js( __( 'Install Inspiro Starter Sites', 'foodica' ) ); ?>' );
+											} ).fail( function () {
+												$err.text( '<?php echo esc_js( __( 'Something went wrong. Please install Inspiro Starter Sites from Plugins > Add New.', 'foodica' ) ); ?>' ).removeAttr( 'hidden' );
+												$btn.prop( 'disabled', false ).text( '<?php echo esc_js( __( 'Install Inspiro Starter Sites', 'foodica' ) ); ?>' );
+											} );
+										} );
+									} );
+									</script>
+								<?php else : ?>
+									<p><?php esc_html_e( 'Ask a site administrator to install the Inspiro Starter Sites plugin.', 'foodica' ); ?></p>
+								<?php endif; ?>
+							</div>
+
+						<?php endif; ?>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<?php foodica_admin_page_footer(); ?>
+	</div>
+	<?php
+}
 
 /**
  * Display HTML page for Theme
@@ -43,7 +318,16 @@ function foodica_display_theme_page() {
       jQuery(document).ready(function($){
 
             $( function() {
-              $( "#tabs" ).tabs();
+              $( "#tabs" ).tabs( {
+                beforeLoad: function () { return false; },
+                beforeActivate: function ( event, ui ) {
+                  var href = ui.newTab.find( 'a' ).attr( 'href' ) || '';
+                  if ( href.charAt( 0 ) !== '#' ) {
+                    window.location.href = href;
+                    return false;
+                  }
+                }
+              } );
             } );
 
       });
@@ -53,19 +337,7 @@ function foodica_display_theme_page() {
     <div class="wpz-onboard_wrapper">
         <div id="tabs">
 
-                <div class="wpz-onboard_header">
-                    <div class="wpz-onboard_title-wrapper">
-                        <h1 class="wpz-onboard_title"><svg width="30" height="30" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg"><mask id="mask0_3157_2609" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="36" height="36"><rect width="36" height="36" fill="#D9D9D9"/></mask><g mask="url(#mask0_3157_2609)"><path d="M6.56094 31.5L4.46094 29.4L19.8359 14.025C19.3859 12.975 19.3234 11.7875 19.6484 10.4625C19.9734 9.1375 20.6859 7.95 21.7859 6.9C23.1109 5.575 24.5859 4.8 26.2109 4.575C27.8359 4.35 29.1609 4.75 30.1859 5.775C31.2109 6.8 31.6109 8.125 31.3859 9.75C31.1609 11.375 30.3859 12.85 29.0609 14.175C28.0109 15.275 26.8234 15.9875 25.4984 16.3125C24.1734 16.6375 22.9859 16.575 21.9359 16.125L20.0609 18L31.4609 29.4L29.3609 31.5L17.9609 20.175L6.56094 31.5ZM10.9859 18.675L6.48594 14.175C5.13594 12.825 4.46094 11.2125 4.46094 9.3375C4.46094 7.4625 5.13594 5.85 6.48594 4.5L15.7859 13.875L10.9859 18.675Z" fill="#289283"/></g></svg> <?php esc_html_e( 'Foodica', 'foodica' ); ?> <span><?php esc_html_e( 'Lite', 'foodica' ); ?></span></h1>
-                        <h2 class="wpz-onboard_framework-version">v <?php echo esc_html( $parent->get( 'Version' ) ); ?></h2>
-                    </div>
-
-                    <ul class="wpz-onboard_tabs">
-                        <li class="wpz-onboard_tab wpz-onboard_tab-quick-start"><a href="#quick-start" title="<?php esc_attr_e( 'Quick Start', 'foodica' ); ?>"><svg width="18" height="18" viewBox="0 0 13 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.166992 14.5V0.333332H7.66699L8.00033 2H12.667V10.3333H6.83366L6.50033 8.66667H1.83366V14.5H0.166992ZM8.20866 8.66667H11.0003V3.66667H6.62533L6.29199 2H1.83366V7H7.87533L8.20866 8.66667Z" fill="#000"></path></svg> <?php esc_html_e( 'Quick Start', 'foodica' ); ?></a></li>
-
-                        <li class="wpz-onboard_tab wpz-onboard_tab-theme-child"><a href="#vs-pro" title="<?php esc_attr_e( 'Free vs. PRO', 'foodica' ); ?>"><svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M15 5.75C11.5482 5.75 8.75 8.54822 8.75 12C8.75 15.4518 11.5482 18.25 15 18.25C15.9599 18.25 16.8674 18.0341 17.6782 17.6489C18.0523 17.4712 18.4997 17.6304 18.6774 18.0045C18.8552 18.3787 18.696 18.8261 18.3218 19.0038C17.3141 19.4825 16.1873 19.75 15 19.75C10.7198 19.75 7.25 16.2802 7.25 12C7.25 7.71979 10.7198 4.25 15 4.25C19.2802 4.25 22.75 7.71979 22.75 12C22.75 12.7682 22.638 13.5115 22.429 14.2139C22.3108 14.6109 21.8932 14.837 21.4962 14.7188C21.0992 14.6007 20.8731 14.1831 20.9913 13.7861C21.1594 13.221 21.25 12.6218 21.25 12C21.25 8.54822 18.4518 5.75 15 5.75Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M5.25 5C5.25 4.58579 5.58579 4.25 6 4.25H15C15.4142 4.25 15.75 4.58579 15.75 5C15.75 5.41421 15.4142 5.75 15 5.75H6C5.58579 5.75 5.25 5.41421 5.25 5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M4.75 8.5C4.75 8.08579 5.08579 7.75 5.5 7.75H8.5C8.91421 7.75 9.25 8.08579 9.25 8.5C9.25 8.91421 8.91421 9.25 8.5 9.25H5.5C5.08579 9.25 4.75 8.91421 4.75 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M1.25 8.5C1.25 8.08579 1.58579 7.75 2 7.75H3.5C3.91421 7.75 4.25 8.08579 4.25 8.5C4.25 8.91421 3.91421 9.25 3.5 9.25H2C1.58579 9.25 1.25 8.91421 1.25 8.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M3.25 12.5C3.25 12.0858 3.58579 11.75 4 11.75H8C8.41421 11.75 8.75 12.0858 8.75 12.5C8.75 12.9142 8.41421 13.25 8 13.25H4C3.58579 13.25 3.25 12.9142 3.25 12.5Z" fill="black" fill-rule="evenodd"/><path clip-rule="evenodd" d="M12.376 8.58397C12.5151 8.37533 12.7492 8.25 13 8.25H17C17.2508 8.25 17.4849 8.37533 17.624 8.58397L19.624 11.584C19.792 11.8359 19.792 12.1641 19.624 12.416L17.624 15.416C17.4849 15.6247 17.2508 15.75 17 15.75H13C12.7492 15.75 12.5151 15.6247 12.376 15.416L10.376 12.416C10.208 12.1641 10.208 11.8359 10.376 11.584L12.376 8.58397ZM13.4014 9.75L11.9014 12L13.4014 14.25H16.5986L18.0986 12L16.5986 9.75H13.4014Z" fill="black" fill-rule="evenodd"/></svg> <?php esc_html_e( 'Free vs. PRO', 'foodica' ); ?></a></li>
-
-                    </ul>
-                </div>
+                <?php foodica_admin_page_header( 'dashboard' ); ?>
 
                 <div class="wpz-onboard_content-wrapper">
                     <div class="wpz-onboard_content">
@@ -79,7 +351,11 @@ function foodica_display_theme_page() {
                                     <p class="wpz-onboard_content-main-intro"><?php esc_html_e( 'Thank you for installing the free version of our theme! Below you can find quick links to different sections where you can configure and customize the theme. The free version includes limited features and customization options, but if you need more flexibility and plan to take your website to the next level, make sure to check the PRO version.', 'foodica' ); ?></p>
 
                                     <p class="section_footer">
-                                        <a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" target="_blank" class="button button-primary">
+                                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=foodica-demo' ) ); ?>" class="button button-primary">
+                                            <?php esc_html_e( 'Import Demo &rarr;', 'foodica' ); ?>
+                                        </a>
+
+                                        <a href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>" target="_blank" class="button button-secondary">
                                             <?php esc_html_e( 'Customize Foodica &rarr;', 'foodica' ); ?>
                                         </a>
 
@@ -597,10 +873,17 @@ function foodica_display_theme_page() {
                                     </svg> <?php esc_html_e( 'Follow WPZOOM', 'foodica' ); ?>
                                 </h3>
                                 <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Follow us on social media for news and updates on all your theme needs.', 'foodica' ); ?></p>
-                                <div class="wpz-onboard_content-side-section-button">
-                                    <a href="https://twitter.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Twitter', 'foodica' ); ?>" class="button button-smaller button-rounded"><span class="dashicons dashicons-twitter"></span> <span class="icon-text"><?php esc_html_e( 'Twitter', 'foodica' ); ?></span></a>
-                                    <a href="https://facebook.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Facebook', 'foodica' ); ?>" class="button button-smaller button-rounded"><svg width="18" height="18" fill="#fff" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title><?php esc_html_e( 'Facebook', 'foodica' ); ?></title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path></svg> <span class="icon-text"><?php esc_html_e( 'Facebook', 'foodica' ); ?></span></a>
-                                    <a href="https://instagram.com/wpzoom" target="_blank" title="<?php esc_attr_e( 'Instagram', 'foodica' ); ?>" class="button button-smaller button-rounded"><span class="dashicons dashicons-instagram"></span> <span class="icon-text"><?php esc_html_e( 'Instagram', 'foodica' ); ?></span></a>
+                                <div class="wpz-onboard_content-side-section-button foodica-social-icons">
+                                    <a href="https://x.com/wpzoom" target="_blank" rel="noopener" title="<?php echo esc_attr( 'X' ); ?>" aria-label="<?php echo esc_attr( 'X' ); ?>" class="button button-smaller button-rounded"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M17.69 3.06 12.69 8.77 8.37 3.06H2.11l7.48 9.78-7.09 8.1h3.04l5.47-6.25 4.78 6.25h6.1l-7.79-10.3 6.62-7.58h-3.03Zm-1.07 16.06L5.65 4.78h1.81l10.84 14.34h-1.68Z"/></svg></a>
+                                    <a href="https://www.facebook.com/wpzoom" target="_blank" rel="noopener" title="<?php echo esc_attr( 'Facebook' ); ?>" aria-label="<?php echo esc_attr( 'Facebook' ); ?>" class="button button-smaller button-rounded"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95Z"/></svg></a>
+                                    <a href="https://www.instagram.com/wpzoom" target="_blank" rel="noopener" title="<?php echo esc_attr( 'Instagram' ); ?>" aria-label="<?php echo esc_attr( 'Instagram' ); ?>" class="button button-smaller button-rounded"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6Zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z"/></svg></a>
+                                    <a href="https://www.youtube.com/@wpzoom" target="_blank" rel="noopener" title="<?php echo esc_attr( 'YouTube' ); ?>" aria-label="<?php echo esc_attr( 'YouTube' ); ?>" class="button button-smaller button-rounded"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.6 31.6 0 0 0 0 12c0 2 .2 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.3-1.9.5-3.8.5-5.8s-.2-3.9-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg></a>
+                                    <a href="https://www.pinterest.com/wpzoom/" target="_blank" rel="noopener" title="<?php echo esc_attr( 'Pinterest' ); ?>" aria-label="<?php echo esc_attr( 'Pinterest' ); ?>" class="button button-smaller button-rounded"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.64 7.86 6.36 9.32-.09-.79-.17-2.01.03-2.87l1.17-4.97s-.3-.6-.3-1.48c0-1.39.81-2.43 1.81-2.43.86 0 1.27.64 1.27 1.41 0 .86-.55 2.15-.83 3.34-.24 1 .5 1.81 1.48 1.81 1.78 0 3.14-1.87 3.14-4.57 0-2.39-1.72-4.06-4.17-4.06-2.84 0-4.51 2.13-4.51 4.34 0 .86.33 1.78.74 2.28.08.1.09.19.07.29l-.28 1.13c-.04.18-.14.22-.33.13-1.25-.58-2.03-2.4-2.03-3.87 0-3.15 2.29-6.05 6.6-6.05 3.46 0 6.16 2.47 6.16 5.77 0 3.45-2.17 6.22-5.19 6.22-1.01 0-1.97-.53-2.29-1.15l-.62 2.37c-.23.87-.84 1.96-1.25 2.62.94.29 1.94.45 2.98.45 5.52 0 10-4.48 10-10S17.52 2 12 2Z"/></svg></a>
+                                </div>
+                                <p class="wpz-onboard_content-side-section-content foodica-fb-groups-intro"><?php esc_html_e( 'Join our Facebook groups to ask questions and share your site:', 'foodica' ); ?></p>
+                                <div class="wpz-onboard_content-side-section-button foodica-fb-groups">
+                                    <a href="https://www.facebook.com/groups/wpzoom" target="_blank" rel="noopener" class="button button-secondary"><?php esc_html_e( 'WPZOOM Community', 'foodica' ); ?></a>
+                                    <a href="https://www.facebook.com/groups/recipeblock" target="_blank" rel="noopener" class="button button-secondary"><?php esc_html_e( 'Recipe Card Blocks', 'foodica' ); ?></a>
                                 </div>
                             </div>
                         </div>
@@ -610,16 +893,7 @@ function foodica_display_theme_page() {
 
             </div> <!-- /#tabs -->
 
-            <div class="wpz-onboard_footer">
-                <h3 class="wpz-onboard_footer-logo"><a href="https://wpzoom.com/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'WPZOOM', 'foodica' ); ?>"><?php esc_html_e( 'WPZOOM', 'foodica' ); ?></a></h3>
-
-                <ul class="wpz-onboard_footer-links">
-                    <li class="wpz-onboard_footer-links-themes"><a href="https://www.wpzoom.com/themes/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Themes', 'foodica' ); ?>"><?php esc_html_e( 'Premium Themes', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-plugins"><a href="https://www.wpzoom.com/plugins/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Plugins', 'foodica' ); ?>"><?php esc_html_e( 'Plugins', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-blog"><a href="https://www.wpzoom.com/blog/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Blog', 'foodica' ); ?>"><?php esc_html_e( 'Our Blog', 'foodica' ); ?></a></li>
-                    <li class="wpz-onboard_footer-links-support"><a href="https://www.wpzoom.com/support/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" target="_blank" title="<?php esc_attr_e( 'Support', 'foodica' ); ?>"><?php esc_html_e( 'Support', 'foodica' ); ?></a></li>
-                </ul>
-            </div>
+            <?php foodica_admin_page_footer(); ?>
         </div>
 
     <?php

@@ -98,7 +98,7 @@ class foodica_Notice_Review extends foodica_Notices {
 								'foodica'
 							),
 							// phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
-							'<a href="' . esc_url( admin_url( 'themes.php?page=foodica' ) ) . '"><strong>' . esc_html( $theme_data->Name ) . '</strong></a>',
+							'<a href="' . esc_url( admin_url( 'admin.php?page=foodica' ) ) . '"><strong>' . esc_html( $theme_data->Name ) . '</strong></a>',
 							'<br>'
 						);
 						?>

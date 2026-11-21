@@ -30,6 +30,9 @@ After installing and activating the Jetpack plugin follow these steps:
 == Changelog ==
 
 = 1.3.5 =
+* New: a Foodica menu in the dashboard with the theme dashboard, Import Demo, Recommended Plugins and Customize (the page under Appearance moved here)
+* New: Import Demo imports the Foodica Lite demo (posts, pages, menus, widgets) with the free Inspiro Starter Sites plugin, which can be installed from that page
+* New: Recommended Plugins page under the Foodica menu: install and activate the recommended plugins with one click. Replaces the TGM Plugin Activation library and its notice
 * Fixed: the menu on the Recipe Index page never appeared. Assign a menu to the new "Recipe Index Menu" location in Appearance > Menus
 * Fixed: "Load More" on the Recipe Index page didn't work with plain permalinks
 * Fixed: the search form had a double slash in its address and repeated the same ids when shown more than once on a page
@@ -183,7 +186,3 @@ Copyright: 2020 Ari Stathopoulos, WordPress Themes Team
 *  Expanding Search Bar, Copyright 2013, Codrops https://github.com/codrops/ExpandingSearchBar, https://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
    License: MIT license
    License URL: http://www.opensource.org/licenses/mit-license.php
-= PHP =
-*  TGM Plugin Activation, Copyright (c) 2011, Thomas Griffin, Gary Jones, Juliette Reinders Folmer http://tgmpluginactivation.com/
-   License: GNU GPL License 2.0 or later
-   License URL: https://www.gnu.org/licenses/gpl-2.0.html
