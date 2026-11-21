@@ -311,13 +311,13 @@ function foodica_plugin_cards( $plugins ) {
 }
 
 /**
- * Load the page script on the Recommended Plugins page.
+ * Load the install script on the Recommended Plugins page and the dashboard (Recipe Card Blocks card).
  *
  * @param string $hook Current admin page.
  * @return void
  */
 function foodica_recommended_plugins_scripts( $hook ) {
-	if ( 'foodica_page_foodica-plugins' !== $hook ) {
+	if ( 'foodica_page_foodica-plugins' !== $hook && 'toplevel_page_foodica' !== $hook ) {
 		return;
 	}
 

@@ -1155,3 +1155,14 @@
     background: transparent;
     border-color: #121738;
 }
+
+/* Dashboard: one-click install button inside a Quick Start card. */
+.wpz-grid-wrap .foodica-inline-install {
+    display: inline;
+}
+
+.wpz-grid-wrap .foodica-inline-install .plugin-item-error:not([hidden]) {
+    display: block;
+    margin: 8px 0 0;
+    color: #b32d2e;
+}

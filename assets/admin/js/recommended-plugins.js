@@ -32,6 +32,11 @@
 			slug: $item.data( 'slug' )
 		} ).done( function ( response ) {
 			if ( response && response.success ) {
+				// A single install button inside a dashboard card: reload so the card shows its next step.
+				if ( $item.hasClass( 'foodica-inline-install' ) ) {
+					window.location.reload();
+					return;
+				}
 				$item.addClass( 'plugin-item--active' );
 				$button.text( settings.active );
 				return;

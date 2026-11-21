@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-21T09:03:36+00:00\n"
+"POT-Creation-Date: 2026-11-21T09:11:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: foodica\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: inc/classes/class-foodica-notice-review.php:86
 #: inc/theme-info-page.php:27
 #: inc/theme-info-page.php:188
-#: inc/theme-info-page.php:816
+#: inc/theme-info-page.php:876
 msgid "Foodica"
 msgstr ""
 
@@ -1029,6 +1029,7 @@ msgstr ""
 #: inc/recommended-plugins.php:364
 #: inc/theme-info-page.php:58
 #: inc/theme-info-page.php:198
+#: inc/theme-info-page.php:567
 msgid "Recommended Plugins"
 msgstr ""
 
@@ -1107,7 +1108,7 @@ msgid "Our Blog"
 msgstr ""
 
 #: inc/theme-info-page.php:220
-#: inc/theme-info-page.php:777
+#: inc/theme-info-page.php:837
 msgid "Support"
 msgstr ""
 
@@ -1158,7 +1159,7 @@ msgid "Customize Foodica &rarr;"
 msgstr ""
 
 #: inc/theme-info-page.php:362
-#: inc/theme-info-page.php:680
+#: inc/theme-info-page.php:731
 msgid "https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page"
 msgstr ""
 
@@ -1207,242 +1208,322 @@ msgstr ""
 msgid "Add a New Recipe &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:523
-msgid "Install Recipe Card Blocks &rarr;"
+#: inc/theme-info-page.php:525
+msgid "Activate Recipe Card Blocks"
 msgstr ""
 
-#: inc/theme-info-page.php:528
+#: inc/theme-info-page.php:525
+msgid "Install Recipe Card Blocks"
+msgstr ""
+
+#: inc/theme-info-page.php:532
 msgid "https://recipecard.io/documentation/recipe-card-blocks-pro-how-to-use-the-recipe-card-blocks/"
 msgstr ""
 
-#: inc/theme-info-page.php:529
+#: inc/theme-info-page.php:533
 msgid "How to Create a Recipe Card?"
 msgstr ""
 
+#: inc/theme-info-page.php:541
+msgid "Homepage Slider"
+msgstr ""
+
 #: inc/theme-info-page.php:543
-msgid "Premium Features"
+msgid "The slider at the top of the homepage shows your posts tagged \"featured\". It uses the Featured Content feature of the free Jetpack plugin: install Jetpack, then add the \"featured\" tag to the posts you want in the slider."
+msgstr ""
+
+#: inc/theme-info-page.php:547
+msgid "Slider Settings &rarr;"
 msgstr ""
 
 #: inc/theme-info-page.php:549
+msgid "Install Jetpack &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:551
+msgid "Tag Your Posts"
+msgstr ""
+
+#: inc/theme-info-page.php:556
+msgid "Menus & Widgets"
+msgstr ""
+
+#: inc/theme-info-page.php:558
+msgid "Add your menus (Top, Main, Mobile, Footer and Recipe Index) and fill the sidebar, footer and header widget areas, for example with an About Me box, social icons and your latest recipes."
+msgstr ""
+
+#: inc/theme-info-page.php:561
+msgid "Menus &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:562
+msgid "Widgets &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:569
+msgid "Recipe cards, social icons, Instagram, contact forms and the demo importer: install the free plugins Foodica works best with, in one click."
+msgstr ""
+
+#: inc/theme-info-page.php:572
+msgid "Recommended Plugins &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:583
+msgid "Premium Features"
+msgstr ""
+
+#: inc/theme-info-page.php:589
+msgid "4 More Demos"
+msgstr ""
+
+#: inc/theme-info-page.php:591
+msgid "Foodica PRO comes with four more homepage designs (Modern Blocks, Minimal, Classic and Blocks), each importable in one click."
+msgstr ""
+
+#: inc/theme-info-page.php:595
+msgid "View PRO Demos &rarr;"
+msgstr ""
+
+#: inc/theme-info-page.php:600
 msgid "WooCommerce Support"
 msgstr ""
 
-#: inc/theme-info-page.php:552
+#: inc/theme-info-page.php:603
 msgid "Need to sell something? With the Foodica PRO theme, you can build your shop and start selling anything easily! The theme is fully compatible with the WooCommerce plugin."
 msgstr ""
 
-#: inc/theme-info-page.php:576
-#: inc/theme-info-page.php:732
+#: inc/theme-info-page.php:627
+#: inc/theme-info-page.php:812
 msgid "Elementor Integration"
 msgstr ""
 
-#: inc/theme-info-page.php:579
+#: inc/theme-info-page.php:630
 msgid "The PRO version will unlock Premium Elementor features such as Slideshow widget, Elementor demo and more!"
 msgstr ""
 
-#: inc/theme-info-page.php:601
+#: inc/theme-info-page.php:652
 msgid "Theme Options Panel"
 msgstr ""
 
-#: inc/theme-info-page.php:603
+#: inc/theme-info-page.php:654
 msgid "Using the Theme Options panel, you can configure different features and functionalities in the theme as you want. Additional customization options are available in the Customizer, while different options for features like Recipe Index can be found on the Theme Options page."
 msgstr ""
 
-#: inc/theme-info-page.php:632
+#: inc/theme-info-page.php:683
 msgid "Customize Every Detail"
 msgstr ""
 
-#: inc/theme-info-page.php:634
+#: inc/theme-info-page.php:685
 msgid "No more custom CSS! The Premium version gives you access to numerous customization options, and you can change the theme's color and font styles of each element."
 msgstr ""
 
-#: inc/theme-info-page.php:643
+#: inc/theme-info-page.php:694
 msgid "Custom Page Templates"
 msgstr ""
 
-#: inc/theme-info-page.php:645
+#: inc/theme-info-page.php:696
 msgid "With the built-in page templates, you can quickly add useful pages to your website. The PRO version includes layouts crafted specifically for food recipe sites."
 msgstr ""
 
-#: inc/theme-info-page.php:648
+#: inc/theme-info-page.php:699
 msgid "https://demo.wpzoom.com/foodica-demo/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page"
 msgstr ""
 
-#: inc/theme-info-page.php:649
+#: inc/theme-info-page.php:700
 msgid "Foodica PRO Demos &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:658
+#: inc/theme-info-page.php:709
 msgid "Block Patterns for Food Blogs"
 msgstr ""
 
-#: inc/theme-info-page.php:660
+#: inc/theme-info-page.php:711
 msgid "The PRO version includes additional block patterns to help you build unique page layouts. You can find different patterns to add sections like recipe categories, call-to-actions and more!"
 msgstr ""
 
-#: inc/theme-info-page.php:666
+#: inc/theme-info-page.php:717
 msgid "Multiple Header & Footer Layouts"
 msgstr ""
 
-#: inc/theme-info-page.php:669
+#: inc/theme-info-page.php:720
 msgid "Upgrading to the Premium version, you will get access to Multiple Header & Footer Layouts."
 msgstr ""
 
-#: inc/theme-info-page.php:678
+#: inc/theme-info-page.php:729
 msgid "And many other premium features..."
 msgstr ""
 
-#: inc/theme-info-page.php:681
+#: inc/theme-info-page.php:732
 msgid "Get Foodica PRO Today &rarr;"
 msgstr ""
 
-#: inc/theme-info-page.php:691
+#: inc/theme-info-page.php:742
 msgid "Foodica Lite vs. Foodica PRO"
 msgstr ""
 
-#: inc/theme-info-page.php:692
+#: inc/theme-info-page.php:743
 msgid "Below is a comparison chart of the free and the premium versions."
 msgstr ""
 
-#: inc/theme-info-page.php:699
+#: inc/theme-info-page.php:750
 msgid "Feature"
 msgstr ""
 
-#: inc/theme-info-page.php:700
+#: inc/theme-info-page.php:751
 msgid "Foodica Lite"
 msgstr ""
 
-#: inc/theme-info-page.php:701
-#: inc/theme-info-page.php:810
-#: inc/theme-info-page.php:813
+#: inc/theme-info-page.php:752
+#: inc/theme-info-page.php:870
+#: inc/theme-info-page.php:873
 msgid "Foodica PRO"
 msgstr ""
 
-#: inc/theme-info-page.php:706
+#: inc/theme-info-page.php:757
 msgid "Responsive Layout"
 msgstr ""
 
-#: inc/theme-info-page.php:711
+#: inc/theme-info-page.php:762
 msgid "Live Customizer"
 msgstr ""
 
-#: inc/theme-info-page.php:716
-msgid "Starter Sites"
+#: inc/theme-info-page.php:767
+msgid "One-Click Demo Import"
 msgstr ""
 
-#: inc/theme-info-page.php:721
-msgid "Color Schemes"
+#: inc/theme-info-page.php:768
+msgid "1 demo"
 msgstr ""
 
-#: inc/theme-info-page.php:727
-msgid "Slider Styles"
-msgstr ""
-
-#: inc/theme-info-page.php:737
-msgid "Advanced WooCommerce Integration"
-msgstr ""
-
-#: inc/theme-info-page.php:742
-msgid "Demo Content Importer"
-msgstr ""
-
-#: inc/theme-info-page.php:748
-msgid "Post Layouts"
-msgstr ""
-
-#: inc/theme-info-page.php:754
-msgid "Header & Footer Layouts"
-msgstr ""
-
-#: inc/theme-info-page.php:760
-msgid "Theme Options"
-msgstr ""
-
-#: inc/theme-info-page.php:766
-msgid "Advertisting Options"
+#: inc/theme-info-page.php:769
+msgid "4 demos"
 msgstr ""
 
 #: inc/theme-info-page.php:772
-msgid "Typography Options"
+msgid "Post Layouts: Grid, List, 2 to 4 Columns"
 msgstr ""
 
-#: inc/theme-info-page.php:773
-msgid "Limited"
+#: inc/theme-info-page.php:777
+msgid "Minimal Style & Full-Width Header"
 msgstr ""
 
-#: inc/theme-info-page.php:778
-msgid "Support Forum"
+#: inc/theme-info-page.php:782
+msgid "Header & Footer Layouts"
 msgstr ""
 
-#: inc/theme-info-page.php:779
-msgid "Fast Email Support"
+#: inc/theme-info-page.php:787
+msgid "Color Schemes"
 msgstr ""
 
-#: inc/theme-info-page.php:786
-msgid "Get Foodica PRO Today!"
+#: inc/theme-info-page.php:792
+msgid "Slider Styles"
 msgstr ""
 
-#: inc/theme-info-page.php:811
-msgid "Upgrade to the PRO version to get instant access to Elementor integration and pre-built demos!"
+#: inc/theme-info-page.php:797
+msgid "Featured Category, Tag & Posts Widgets"
 msgstr ""
 
-#: inc/theme-info-page.php:816
-msgid "Discover the PRO Version &rarr;"
+#: inc/theme-info-page.php:802
+msgid "Popular Recipes by Views"
 msgstr ""
 
-#: inc/theme-info-page.php:826
-msgid "Need help?"
+#: inc/theme-info-page.php:807
+msgid "Custom 404 Page"
+msgstr ""
+
+#: inc/theme-info-page.php:817
+msgid "Advanced WooCommerce Integration"
+msgstr ""
+
+#: inc/theme-info-page.php:822
+msgid "Theme Options"
 msgstr ""
 
 #: inc/theme-info-page.php:827
-msgid "Documentation is the place where you’ll find the information needed to setup the theme quickly, and other details about theme-specific features. You can also get in touch with our team by contacting us through our website or using the Support Forum."
+msgid "Advertising Options"
 msgstr ""
 
-#: inc/theme-info-page.php:829
-msgid "Read documentation"
+#: inc/theme-info-page.php:832
+msgid "Typography Options"
 msgstr ""
 
-#: inc/theme-info-page.php:829
-msgid "Documentation"
+#: inc/theme-info-page.php:833
+msgid "Limited"
 msgstr ""
 
-#: inc/theme-info-page.php:829
-msgid "Open Support Desk"
+#: inc/theme-info-page.php:838
+msgid "Support Forum"
 msgstr ""
 
-#: inc/theme-info-page.php:829
-msgid "Support Forums"
-msgstr ""
-
-#: inc/theme-info-page.php:843
-msgid "Subscribe for Tips & Tricks"
+#: inc/theme-info-page.php:839
+msgid "Fast Email Support"
 msgstr ""
 
 #: inc/theme-info-page.php:846
-msgid "To ease up the journey you’re starting with Foodica, we’re sending you some useful tips & tricks to have the best experience building your website."
+msgid "Get Foodica PRO Today!"
 msgstr ""
 
-#: inc/theme-info-page.php:857
-msgid "Subscribe"
+#: inc/theme-info-page.php:871
+msgid "Upgrade to Foodica PRO for 4 more demos, grid and list layouts, Elementor support and many more options."
 msgstr ""
 
-#: inc/theme-info-page.php:873
-msgid "Follow WPZOOM"
-msgstr ""
-
-#: inc/theme-info-page.php:875
-msgid "Follow us on social media for news and updates on all your theme needs."
-msgstr ""
-
-#: inc/theme-info-page.php:883
-msgid "Join our Facebook groups to ask questions and share your site:"
-msgstr ""
-
-#: inc/theme-info-page.php:885
-msgid "WPZOOM Community"
+#: inc/theme-info-page.php:876
+msgid "Discover the PRO Version &rarr;"
 msgstr ""
 
 #: inc/theme-info-page.php:886
+msgid "Need help?"
+msgstr ""
+
+#: inc/theme-info-page.php:887
+msgid "Documentation is the place where you’ll find the information needed to setup the theme quickly, and other details about theme-specific features. You can also get in touch with our team by contacting us through our website or using the Support Forum."
+msgstr ""
+
+#: inc/theme-info-page.php:889
+msgid "Read documentation"
+msgstr ""
+
+#: inc/theme-info-page.php:889
+msgid "Documentation"
+msgstr ""
+
+#: inc/theme-info-page.php:889
+msgid "Open Support Desk"
+msgstr ""
+
+#: inc/theme-info-page.php:889
+msgid "Support Forums"
+msgstr ""
+
+#: inc/theme-info-page.php:903
+msgid "Subscribe for Tips & Tricks"
+msgstr ""
+
+#: inc/theme-info-page.php:906
+msgid "To ease up the journey you’re starting with Foodica, we’re sending you some useful tips & tricks to have the best experience building your website."
+msgstr ""
+
+#: inc/theme-info-page.php:917
+msgid "Subscribe"
+msgstr ""
+
+#: inc/theme-info-page.php:933
+msgid "Follow WPZOOM"
+msgstr ""
+
+#: inc/theme-info-page.php:935
+msgid "Follow us on social media for news and updates on all your theme needs."
+msgstr ""
+
+#: inc/theme-info-page.php:943
+msgid "Join our Facebook groups to ask questions and share your site:"
+msgstr ""
+
+#: inc/theme-info-page.php:945
+msgid "WPZOOM Community"
+msgstr ""
+
+#: inc/theme-info-page.php:946
 msgid "Recipe Card Blocks"
 msgstr ""
 

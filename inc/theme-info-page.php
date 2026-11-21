@@ -519,9 +519,13 @@ function foodica_display_theme_page() {
 
                                                         <?php } else {  ?>
 
-                                                            <a href="<?php echo esc_url( admin_url( 'plugin-install.php?s=recipe%252Bcard%252Bblocks%252Bwpzoom%252Bfoodica&tab=search&type=term' ) ); ?>" target="_blank" class="button button-primary">
-                                                                <?php esc_html_e( 'Install Recipe Card Blocks &rarr;', 'foodica' ); ?>
-                                                            </a>
+                                                            <?php $foodica_rcb_installed = function_exists( 'foodica_get_plugin_file' ) && foodica_get_plugin_file( 'recipe-card-blocks-by-wpzoom' ); ?>
+                                                            <span class="foodica-plugin-item foodica-inline-install" data-slug="recipe-card-blocks-by-wpzoom">
+                                                                <button type="button" class="button button-primary js-foodica-install-plugin">
+                                                                    <?php echo $foodica_rcb_installed ? esc_html__( 'Activate Recipe Card Blocks', 'foodica' ) : esc_html__( 'Install Recipe Card Blocks', 'foodica' ); ?>
+                                                                </button>
+                                                                <span class="plugin-item-error" role="alert" hidden></span>
+                                                            </span>
 
                                                         <?php } ?>
 
@@ -532,6 +536,42 @@ function foodica_display_theme_page() {
                                                 </div>
 
 
+
+                                            <div class="section">
+                                                    <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2" stroke="#000" stroke-width="1.6"/><path d="M8 12h8M6 9.5 4.5 12 6 14.5M18 9.5l1.5 2.5-1.5 2.5" stroke="#000" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg> <?php esc_html_e( 'Homepage Slider', 'foodica' ); ?></h4>
+                                                    <p class="about">
+                                                        <?php esc_html_e( 'The slider at the top of the homepage shows your posts tagged "featured". It uses the Featured Content feature of the free Jetpack plugin: install Jetpack, then add the "featured" tag to the posts you want in the slider.', 'foodica' ); ?>
+                                                    </p>
+                                                    <p class="section_footer">
+                                                        <?php if ( class_exists( 'Jetpack' ) ) : ?>
+                                                            <a href="<?php echo esc_url( admin_url( 'customize.php?autofocus[section]=featured_content' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Slider Settings &rarr;', 'foodica' ); ?></a>
+                                                        <?php else : ?>
+                                                            <a href="<?php echo esc_url( admin_url( 'admin.php?page=foodica-plugins' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Install Jetpack &rarr;', 'foodica' ); ?></a>
+                                                        <?php endif; ?>
+                                                        <a href="<?php echo esc_url( admin_url( 'edit.php' ) ); ?>" class="button button-secondary"><?php esc_html_e( 'Tag Your Posts', 'foodica' ); ?></a>
+                                                    </p>
+                                                </div>
+
+                                                <div class="section">
+                                                    <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10" stroke="#000" stroke-width="1.8" stroke-linecap="round"/></svg> <?php esc_html_e( 'Menus & Widgets', 'foodica' ); ?></h4>
+                                                    <p class="about">
+                                                        <?php esc_html_e( 'Add your menus (Top, Main, Mobile, Footer and Recipe Index) and fill the sidebar, footer and header widget areas, for example with an About Me box, social icons and your latest recipes.', 'foodica' ); ?>
+                                                    </p>
+                                                    <p class="section_footer">
+                                                        <a href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Menus &rarr;', 'foodica' ); ?></a>
+                                                        <a href="<?php echo esc_url( admin_url( 'widgets.php' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Widgets &rarr;', 'foodica' ); ?></a>
+                                                    </p>
+                                                </div>
+
+                                                <div class="section">
+                                                    <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M9 2v5M15 2v5M6 7h12v4a6 6 0 0 1-12 0V7Zm6 10v5" stroke="#000" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <?php esc_html_e( 'Recommended Plugins', 'foodica' ); ?></h4>
+                                                    <p class="about">
+                                                        <?php esc_html_e( 'Recipe cards, social icons, Instagram, contact forms and the demo importer: install the free plugins Foodica works best with, in one click.', 'foodica' ); ?>
+                                                    </p>
+                                                    <p class="section_footer">
+                                                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=foodica-plugins' ) ); ?>" class="button button-primary"><?php esc_html_e( 'Recommended Plugins &rarr;', 'foodica' ); ?></a>
+                                                    </p>
+                                                </div>
 
                                             </div><!-- /.wpz-grid-wrap -->
 
@@ -544,6 +584,17 @@ function foodica_display_theme_page() {
 
                                             <div class="wpz-grid-wrap">
 
+
+                                                <div class="section premium-feature">
+                                                    <h4><svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2" stroke="#000" stroke-width="1.6"/><path d="M3 9h18M8 13h8M8 16h5" stroke="#000" stroke-width="1.6" stroke-linecap="round"/></svg> <?php esc_html_e( '4 More Demos', 'foodica' ); ?></h4>
+                                                    <p class="about">
+                                                        <?php esc_html_e( 'Foodica PRO comes with four more homepage designs (Modern Blocks, Minimal, Classic and Blocks), each importable in one click.', 'foodica' ); ?>
+                                                    </p>
+                                                    <p class="section_footer">
+                                                        <?php $foodica_pro_demos_url = foodica_starter_sites_active() ? admin_url( 'admin.php?page=foodica-demo#inspiro-starter-sites-premium' ) : 'https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page'; ?>
+                                                        <a href="<?php echo esc_url( $foodica_pro_demos_url ); ?>" class="button button-primary"><?php esc_html_e( 'View PRO Demos &rarr;', 'foodica' ); ?></a>
+                                                    </p>
+                                                </div>
 
                                                 <div class="section premium-feature">
                                                     <h4><svg height="26" preserveAspectRatio="xMidYMid" version="1.1" viewBox="0 0 256 153" width="26" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g><path d="M23.7586644,0 L232.137438,0 C245.324643,0 256,10.6753566 256,23.8625617 L256,103.404434 C256,116.591639 245.324643,127.266996 232.137438,127.266996 L157.409942,127.266996 L167.666657,152.385482 L122.558043,127.266996 L23.8633248,127.266996 C10.6761196,127.266996 0.000763038458,116.591639 0.000763038458,103.404434 L0.000763038458,23.8625617 C-0.10389732,10.7800169 10.5714592,0 23.7586644,0 L23.7586644,0 Z" fill="#9B5C8F"/><path d="M14.5781994,21.7495935 C16.0351099,19.7723577 18.2204758,18.7317073 21.1342969,18.5235772 C26.441614,18.1073171 29.4595002,20.604878 30.1879555,26.0162602 C33.4139717,47.7658537 36.9521831,66.1853659 40.6985246,81.2747967 L63.4887685,37.8796748 C65.5700693,33.9252033 68.1716953,31.8439024 71.2936465,31.6357724 C75.8725083,31.3235772 78.6822644,34.2373984 79.8269798,40.3772358 C82.4286059,54.2178862 85.7586872,65.9772358 89.7131587,75.9674797 C92.4188498,49.5349593 96.9977116,30.4910569 103.449744,18.7317073 C105.01072,15.8178862 107.300151,14.3609756 110.318037,14.1528455 C112.711533,13.9447154 114.896899,14.6731707 116.874134,16.2341463 C118.85137,17.795122 119.89202,19.7723577 120.100151,22.1658537 C120.204216,24.0390244 119.89202,25.6 119.0595,27.1609756 C115.000964,34.6536585 111.670882,47.2455285 108.965191,64.7284553 C106.363565,81.6910569 105.42698,94.9073171 106.05137,104.377236 C106.2595,106.978862 105.84324,109.268293 104.80259,111.245528 C103.553809,113.534959 101.680638,114.78374 99.2871424,114.99187 C96.5814514,115.2 93.7716953,113.95122 91.0660042,111.141463 C81.3879555,101.255285 73.6871424,86.4780488 68.0676303,66.8097561 C61.3034026,80.1300813 56.3082807,90.1203252 53.0822644,96.7804878 C46.942427,108.539837 41.739175,114.57561 37.3684433,114.887805 C34.5586872,115.095935 32.1651912,112.702439 30.0838904,107.707317 C24.7765733,94.0747967 19.0529961,67.7463415 12.9131587,28.7219512 C12.4968985,26.0162602 13.1212888,23.6227642 14.5781994,21.7495935 Z M238.213972,38.0878049 C234.46763,31.5317073 228.952183,27.5772358 221.563565,26.0162602 C219.586329,25.6 217.713159,25.3918699 215.944053,25.3918699 C205.953809,25.3918699 197.836736,30.595122 191.488768,41.001626 C186.077386,49.8471545 183.371695,59.6292683 183.371695,70.3479675 C183.371695,78.3609756 185.036736,85.2292683 188.366817,90.9528455 C192.113159,97.5089431 197.628606,101.463415 205.017224,103.02439 C206.99446,103.44065 208.86763,103.64878 210.636736,103.64878 C220.731045,103.64878 228.848118,98.4455285 235.09202,88.0390244 C240.503403,79.0894309 243.209094,69.3073171 243.209094,58.5886179 C243.313159,50.4715447 241.544053,43.7073171 238.213972,38.0878049 Z M225.101777,66.9138211 C223.644866,73.7821138 221.04324,78.8813008 217.192834,82.3154472 C214.174947,85.0211382 211.365191,86.1658537 208.763565,85.6455285 C206.266004,85.1252033 204.184703,82.9398374 202.623728,78.8813008 C201.374947,75.6552846 200.750557,72.4292683 200.750557,69.4113821 C200.750557,66.8097561 200.958687,64.2081301 201.479012,61.8146341 C202.415598,57.5479675 204.184703,53.3853659 206.99446,49.4308943 C210.428606,44.3317073 214.070882,42.2504065 217.817224,42.9788618 C220.314785,43.499187 222.396086,45.6845528 223.957061,49.7430894 C225.205842,52.9691057 225.830232,56.195122 225.830232,59.2130081 C225.830232,61.9186992 225.622102,64.5203252 225.101777,66.9138211 Z M173.069256,38.0878049 C169.322915,31.5317073 163.703403,27.5772358 156.41885,26.0162602 C154.441614,25.6 152.568443,25.3918699 150.799338,25.3918699 C140.809094,25.3918699 132.69202,30.595122 126.344053,41.001626 C120.932671,49.8471545 118.22698,59.6292683 118.22698,70.3479675 C118.22698,78.3609756 119.89202,85.2292683 123.222102,90.9528455 C126.968443,97.5089431 132.48389,101.463415 139.872508,103.02439 C141.849744,103.44065 143.722915,103.64878 145.49202,103.64878 C155.586329,103.64878 163.703403,98.4455285 169.947305,88.0390244 C175.358687,79.0894309 178.064378,69.3073171 178.064378,58.5886179 C178.064378,50.4715447 176.399338,43.7073171 173.069256,38.0878049 Z M159.852996,66.9138211 C158.396086,73.7821138 155.79446,78.8813008 151.944053,82.3154472 C148.926167,85.0211382 146.116411,86.1658537 143.514785,85.6455285 C141.017224,85.1252033 138.935923,82.9398374 137.374947,78.8813008 C136.126167,75.6552846 135.501777,72.4292683 135.501777,69.4113821 C135.501777,66.8097561 135.709907,64.2081301 136.230232,61.8146341 C137.166817,57.5479675 138.935923,53.3853659 141.745679,49.4308943 C145.179825,44.3317073 148.822102,42.2504065 152.568443,42.9788618 C155.066004,43.499187 157.147305,45.6845528 158.708281,49.7430894 C159.957061,52.9691057 160.581451,56.195122 160.581451,59.2130081 C160.685516,61.9186992 160.373321,64.5203252 159.852996,66.9138211 L159.852996,66.9138211 L159.852996,66.9138211 Z" fill="#FFFFFF"/></g></svg> <?php esc_html_e( 'WooCommerce Support', 'foodica' ); ?>
@@ -713,20 +764,49 @@ function foodica_display_theme_page() {
                                                         <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><h3><?php esc_html_e( 'Starter Sites', 'foodica' ); ?></h3></td>
-                                                        <td>1</td>
-                                                        <td>3</td>
+                                                        <td><h3><strong><?php esc_html_e( 'One-Click Demo Import', 'foodica' ); ?></strong></h3></td>
+                                                        <td><?php esc_html_e( '1 demo', 'foodica' ); ?></td>
+                                                        <td><?php esc_html_e( '4 demos', 'foodica' ); ?></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><strong><?php esc_html_e( 'Post Layouts: Grid, List, 2 to 4 Columns', 'foodica' ); ?></strong></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><?php esc_html_e( 'Minimal Style & Full-Width Header', 'foodica' ); ?></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><?php esc_html_e( 'Header & Footer Layouts', 'foodica' ); ?></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h3><?php esc_html_e( 'Color Schemes', 'foodica' ); ?></h3></td>
                                                         <td>1</td>
                                                         <td>10</td>
                                                     </tr>
-
                                                     <tr>
                                                         <td><h3><?php esc_html_e( 'Slider Styles', 'foodica' ); ?></h3></td>
                                                         <td>1</td>
                                                         <td>3</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><?php esc_html_e( 'Featured Category, Tag & Posts Widgets', 'foodica' ); ?></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><?php esc_html_e( 'Popular Recipes by Views', 'foodica' ); ?></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><h3><?php esc_html_e( 'Custom 404 Page', 'foodica' ); ?></h3></td>
+                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
+                                                        <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
                                                     <tr>
                                                         <td><h3><strong><?php esc_html_e( 'Elementor Integration', 'foodica' ); ?></strong></h3></td>
@@ -738,36 +818,16 @@ function foodica_display_theme_page() {
                                                         <td><span class="dashicons dashicons-no-alt"></span></td>
                                                         <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
-                                                                                                    <tr>
-                                                        <td><h3><?php esc_html_e( 'Demo Content Importer', 'foodica' ); ?></h3></td>
-                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
-                                                        <td><span class="dashicons dashicons-saved"></span></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td><h3><strong><?php esc_html_e( 'Post Layouts', 'foodica' ); ?></strong></h3></td>
-                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
-                                                        <td><span class="dashicons dashicons-saved"></span></td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td><h3><?php esc_html_e( 'Header & Footer Layouts', 'foodica' ); ?></h3></td>
-                                                        <td><span class="dashicons dashicons-no-alt"></span></td>
-                                                        <td><span class="dashicons dashicons-saved"></span></td>
-                                                    </tr>
-
                                                     <tr>
                                                         <td><h3><?php esc_html_e( 'Theme Options', 'foodica' ); ?></h3></td>
                                                         <td><span class="dashicons dashicons-no-alt"></span></td>
                                                         <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
-
                                                     <tr>
-                                                        <td><h3><?php esc_html_e( 'Advertisting Options', 'foodica' ); ?></h3></td>
+                                                        <td><h3><?php esc_html_e( 'Advertising Options', 'foodica' ); ?></h3></td>
                                                         <td><span class="dashicons dashicons-no-alt"></span></td>
                                                         <td><span class="dashicons dashicons-saved"></span></td>
                                                     </tr>
-
                                                     <tr>
                                                         <td><h3><?php esc_html_e( 'Typography Options', 'foodica' ); ?></h3></td>
                                                         <td><?php esc_html_e( 'Limited', 'foodica' ); ?></td>
@@ -808,7 +868,7 @@ function foodica_display_theme_page() {
                                     <path d="M19 9L17.75 6.25L15 5L17.75 3.75L19 1L20.25 3.75L23 5L20.25 6.25L19 9ZM19 23L17.75 20.25L15 19L17.75 17.75L19 15L20.25 17.75L23 19L20.25 20.25L19 23ZM9 20L6.5 14.5L1 12L6.5 9.5L9 4L11.5 9.5L17 12L11.5 14.5L9 20ZM9 15.15L10 13L12.15 12L10 11L9 8.85L8 11L5.85 12L8 13L9 15.15Z" fill="#289283"/>
                                     </g>
                                     </svg> <?php esc_html_e( 'Foodica PRO', 'foodica' ); ?></h3>
-                                <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Upgrade to the PRO version to get instant access to Elementor integration and pre-built demos!', 'foodica' ); ?></p>
+                                <p class="wpz-onboard_content-side-section-content"><?php esc_html_e( 'Upgrade to Foodica PRO for 4 more demos, grid and list layouts, Elementor support and many more options.', 'foodica' ); ?></p>
 
                                 <a href="https://www.wpzoom.com/themes/foodica/?utm_source=wpadmin&utm_medium=foodica-lite&utm_campaign=theme-page" title="<?php esc_attr_e( 'Foodica PRO', 'foodica' ); ?>" target="_blank"><img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/admin/pro.png' ); ?>" width="300" alt="<?php echo esc_attr__( 'Foodica PRO', 'foodica' ); ?>" /></a>
 
