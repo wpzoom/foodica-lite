@@ -574,31 +574,18 @@ function foodica_display_theme_page() {
                                           <div class="ml-form-align-center">
                                             <div class="ml-form-embedWrapper embedForm">
                                               <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
-                                                <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/w5r9l0" data-code="w5r9l0" method="post" target="_blank">
-                                                    <input aria-label="email" aria-required="true" type="email" value="<?php echo esc_attr($current_user->user_email); ?>" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
-                                                  <input type="hidden" name="ml-submit" value="1">
+                                                <form class="ml-block-form" action="<?php echo esc_url( 'https://recipecard.io/wp-json/wpzoom/v1/subscribe/product' ); ?>" method="post" target="_blank">
+                                                    <input aria-label="email" aria-required="true" type="email" value="<?php echo esc_attr($current_user->user_email); ?>" class="form-control" name="email" placeholder="Email" autocomplete="email">
+                                                  <input type="hidden" name="form" value="product-foodica-theme"><input type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
                                                   <span class="ml-form-embedSubmit">
                                                     <button type="submit" class="button button-primary"><?php esc_html_e( 'Subscribe', 'foodica' ); ?></button>
-                                                    <button disabled="disabled" style="display:none" type="button" class="loading button-primary"> <div class="ml-form-embedSubmitLoad"></div> <span class="sr-only"><?php esc_html_e( 'Loading...', 'foodica' ); ?></span> </button>
                                                   </span>
-                                                  <input type="hidden" name="anticsrf" value="true">
                                                 </form>
-                                              </div>
-                                              <div class="ml-form-successBody row-success" style="display:none">
-                                                <div class="ml-form-successContent">
-                                                  <h3><?php esc_html_e( 'Thank you!', 'foodica' ); ?></h3>
-                                                  <p><?php esc_html_e( 'You have successfully joined our subscriber list.', 'foodica' ); ?></p>
-                                                </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-
-                                        <script>
-                                          function ml_webform_success_5662656(){var r=ml_jQuery||jQuery;r(".ml-subscribe-form-5662656 .row-success").show(),r(".ml-subscribe-form-5662656 .row-form").hide()}
-                                        </script>
-                                        <img src="https://track.mailerlite.com/webforms/o/5662656/w5r9l0?v1651224972" width="1" height="1" style="max-width:1px;max-height:1px;visibility:hidden;padding:0;margin:0;display:block" alt="." border="0">
-                                        <script src="https://static.mailerlite.com/js/w/webforms.min.js?v9b62042f798751c8de86a784eab23614" type="text/javascript"></script>                     </p>
+                     </p>
                                 </div>
                             </div>
                             </div>
