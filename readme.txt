@@ -3,7 +3,7 @@ Contributors: WPZOOM
 Requires at least: 6.4
 Tested up to: 7.1
 Requires PHP: 7.4
-Version: 1.3.5
+Version: 1.4.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, threaded-comments, translation-ready, blog, e-commerce, food-and-drink, rtl-language-support
@@ -29,7 +29,7 @@ After installing and activating the Jetpack plugin follow these steps:
 
 == Changelog ==
 
-= 1.3.5 =
+= 1.4.0 =
 * New: a Foodica menu in the dashboard with the theme dashboard, Import Demo, Recommended Plugins and Customize (the page under Appearance moved here)
 * New: Import Demo imports the Foodica Lite demo (posts, pages, menus, widgets) with the free Inspiro Starter Sites plugin, which can be installed from that page
 * New: Recommended Plugins page under the Foodica menu: install and activate the recommended plugins with one click. Replaces the TGM Plugin Activation library and its notice
@@ -41,7 +41,6 @@ After installing and activating the Jetpack plugin follow these steps:
 * Performance: the Dashicons stylesheet is no longer loaded on the front end; menu and post navigation arrows now use the theme's own icon font
 * Performance: the slider script loads only on the homepage when the slider is shown
 * Added support for responsive embedded videos in the block editor
-* The review request in the dashboard now appears after two weeks of use instead of right after activation
 
 = 1.3.4 =
 * Improved translation support
